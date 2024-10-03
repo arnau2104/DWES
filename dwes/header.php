@@ -16,16 +16,16 @@
       <img src="/student067/dwes/images/logo_hotel.jpg" class="brand-logo" width="60px"></img>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Reservations</a></li>
+        <li><a href="./student067/dwes/pages/reservations.php">Reservations</a></li>
         <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="collapsible.html">Javascript</a></li> 
        
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
+    <li><a href="./student067/dwes/pages/reservations.php">Reservatios</a></li>
     <li><a href="badges.html">Components</a></li>
     <li><a href="collapsible.html">Javascript</a></li>
     

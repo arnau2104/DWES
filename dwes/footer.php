@@ -9,10 +9,9 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Manuals</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Manual 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Manual 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Manual 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Manual 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="./student067/dwes/pages/manual_user.html">User Manual</a></li>
+                  <li><a class="grey-text text-lighten-3" href="./student067/dwes/pages/manual_tecnical">Tecnical Manual</a></li>
+                  <li><a class="grey-text text-lighten-3" href="./student067/dwes/pages/manual_installation.html">Installation Manual</a></li>         
                 </ul>
               </div>
             </div>
