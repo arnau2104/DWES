@@ -3,8 +3,10 @@
     <main>
         <h1>Welcome to Arnau's Hotel </h1>
        <?php
-        define('name','Arnau');
-        echo name;
+        $name = 'Arnau';
+        $lastname = 'marques';
+        echo ucwords($name) . ' ' . ucfirst($lastname) ;
+        echo strcoll($name,$name);
        ?>
        
     </main>
