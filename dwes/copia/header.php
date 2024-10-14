@@ -21,7 +21,7 @@
       <nav>
         <ul class="flex space-x-4">
           <li><a href="#" class="text-white hover:text-gray-300">Inicio</a></li>
-          <li><a href="#" class="text-white hover:text-gray-300">Servicios</a></li>
+          <li><a href="./pages/forms/form_insert_customer.php" class="text-white hover:text-gray-300">Customers</a></li>
           <li><a href="#" class="text-white hover:text-gray-300">Acerca de</a></li>
           <li><a href="#" class="text-white hover:text-gray-300">Contacto</a></li>
         </ul>

@@ -1,56 +1,41 @@
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
-<main>
-    <h1 class="center">Register Form <h1>
-   <form action="./student067/dwes/pages/bd/bd_insert_customer.php" method="POST">
-    <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Forename" id="forename" name="forename" type="text" class="validate">
-          <label for="forename">Forename</label>
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/copia/header.php');?>
+  <!-- Formulario -->
+  <main class="container mx-auto py-8">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Customer Insert Form</h2>
+      <form action="../bd/bd_insert_customer.php" method="POST">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Forename</label>
+          <input type="text"  name="forename" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your forename">
         </div>
-        <div class="input-field col s6">
-          <input id="lastname" name="lastname" type="text" class="validate">
-          <label for="lastname">Last Name</label>
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Lastname</label>
+          <input type="text" name="lastname" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your lastname">
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input  id="nif" name="nif" type="text" class="validate">
-          <label for="nif">NIF</label>
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Username</label>
+          <input type="text" name="username" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your username">
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="username" name="username" type="text" class="validate">
-          <label for="username">Username</label>
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Password</label>
+          <input type="text" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your password">
         </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" name="password" type="password" class="validate">
-          <label for="password">Password</label>
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Nif</label>
+          <input type="text" name="nif" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your nif">
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" name="email" type="email" class="validate">
-          <label for="email">Email</label>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+          <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your email">
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="phone" name="phone" type="text" class="validate">
-          <label for="phone">Phone</label>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">Phone</label>
+          <input type="number"  name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your phone">
         </div>
-      </div>
-      
-      
+        <div class="text-center">
+          <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Submit</button>
         </div>
-      </div>
-    </form>
-  </div>
-  <button class="btn waves-effect waves-light black" type="submit" name="submit">Submit
-  <i class="material-icons right">send</i>
-  </form>
-</main>
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>
+      </form>
+    </div>
+  </main>
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/copia/footer.php');?>
