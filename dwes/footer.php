@@ -1,28 +1,33 @@
+<footer class="bg-gray-800 p-6 mt-8">
+  <div class="container mx-auto text-white flex justify-between items-center">
+    <!-- Logo o Nombre -->
+    <div class="text-lg font-bold">
+      MiLogo
+    </div>
 
-<footer class="grey darken-3 page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Manuals</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="./student067/dwes/pages/manual_user.html">User Manual</a></li>
-                  <li><a class="grey-text text-lighten-3" href="./student067/dwes/pages/manual_tecnical">Tecnical Manual</a></li>
-                  <li><a class="grey-text text-lighten-3" href="./student067/dwes/pages/manual_installation.html">Installation Manual</a></li>         
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2024 Arnau's Hotel Copyright 
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
+    <!-- Navegación -->
+    <nav>
+      <ul class="flex space-x-4">
+        <li><a href="#" class="hover:text-gray-400">Inicio</a></li>
+        <li><a href="#" class="hover:text-gray-400">Servicios</a></li>
+        <li><a href="#" class="hover:text-gray-400">Acerca de</a></li>
+        <li><a href="#" class="hover:text-gray-400">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Redes sociales -->
+    <div class="space-x-4">
+      <a href="#" class="hover:text-gray-400">Facebook</a>
+      <a href="#" class="hover:text-gray-400">Twitter</a>
+      <a href="#" class="hover:text-gray-400">Instagram</a>
+    </div>
+  </div>
+
+  <!-- Derechos reservados -->
+  <div class="mt-6 text-center text-gray-500 text-sm">
+    © 2024 MiEmpresa. Todos los derechos reservados.
+  </div>
+</footer>
 <script src="./js/menu_header.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
