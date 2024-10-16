@@ -22,10 +22,10 @@
         <ul class="flex space-x-4">
           <li><a href="/student067/dwes/index.php" class="text-white hover:text-gray-300">Inicio</a></li>
           <li><p class="text-white hover:text-gray-300">Customers</p><ul>
-            <li><a href="/student067/dwes/pages/forms/form_customer_select.php" class="text-white hover:text-gray-300">Select Customer</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_customer_insert.php" class="text-white hover:text-gray-300">Insert Customer</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_customer_delete.php" class="text-white hover:text-gray-300">Delete Customer</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_customer_update.php"class="text-white hover:text-gray-300" >Update Customer</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_select_customer.php" class="text-white hover:text-gray-300">Select Customer</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_insert_customer.php" class="text-white hover:text-gray-300">Insert Customer</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_delete_customer.php" class="text-white hover:text-gray-300">Delete Customer</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_update_customer.php"class="text-white hover:text-gray-300" >Update Customer</a></li>
           </ul></li>
           <li><a href="#" class="text-white hover:text-gray-300">Rooms</a></li>
           <li><a href="#" class="text-white hover:text-gray-300">Reservations</a></li>
