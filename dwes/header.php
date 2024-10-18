@@ -25,9 +25,14 @@
             <li><a href="/student067/dwes/pages/forms/form_customer_select.php" class="text-white hover:text-gray-300">Select Customer</a></li>
             <li><a href="/student067/dwes/pages/forms/form_customer_insert.php" class="text-white hover:text-gray-300">Insert Customer</a></li>
             <li><a href="/student067/dwes/pages/forms/form_customer_delete.php" class="text-white hover:text-gray-300">Delete Customer</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_customer_update.php"class="text-white hover:text-gray-300" >Update Customer</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_customer_update_call_id.php"class="text-white hover:text-gray-300" >Update Customer</a></li>
           </ul></li>
-          <li><a href="#" class="text-white hover:text-gray-300">Rooms</a></li>
+          <ul><li><a href="#" class="text-white hover:text-gray-300">Rooms</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_place_select.php" class="text-white hover:text-gray-300">Select Room</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Insert Room</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Delete Room</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Update Room</a></li>
+          </ul>
           <li><a href="#" class="text-white hover:text-gray-300">Reservations</a></li>
         </ul>
       </nav>
