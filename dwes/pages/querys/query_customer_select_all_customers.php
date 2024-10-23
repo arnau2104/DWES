@@ -1,10 +1,10 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php')
+    include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php');
 
 // write query
-    $customer_id = $_POST['customer_id'];
-    $sqlOneCustomer = "select * from customers where customer_id = '$customer_id'";
-    $sqlAllCustomers =  "select * from customers";
+     $customer_id = $_POST['customer_id'];
+    $sqlOneCustomer = "select * from 067_customers where customer_id = '$customer_id'";
+    $sqlAllCustomers =  "select * from 067_customers";
     //make query and get result
     
     if(empty($_POST['customer_id'])== true) {

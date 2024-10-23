@@ -33,7 +33,12 @@
             <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Delete Room</a></li>
             <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Update Room</a></li>
           </ul>
-          <li><a href="#" class="text-white hover:text-gray-300">Reservations</a></li>
+          <ul><li><a href="#" class="text-white hover:text-gray-300">Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_reservation_select.php" class="text-white hover:text-gray-300">Show Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Do Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Delete Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Update Reservations</a></li>
+          </ul>
         </ul>
       </nav>
 

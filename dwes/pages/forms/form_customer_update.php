@@ -1,16 +1,5 @@
 <?php
-    //connect to databas
-    $conn = mysqli_connect('localhost', 'root', '', 'hotel_managment_system');
-
-    //check connection
-    if(!$conn) {
-        echo 'Connection error: ' . mysqli_connect_error();
-    };
-
-   include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/select_customer_byId.php') 
-   
-    
-    
+   include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_customer_select_byId.php');        
 ?>
 
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
