@@ -3,14 +3,14 @@
 
 // write query
      $reservation_id = $_POST['reservation_id'];
-    $sqlOneReservation = "select * from 067_reservations_view where reservation_id = '$reservation_id'";
-    $sqlAllReservations =  "select * from 067_reservations_view";
+    $sqlOneReservation = "SELECT * FROM 067_reservations_view WHERE reservation_id = '$reservation_id'";
+    $sqlAllReservations =  "SELECT * FROM 067_reservations_view";
     //make query and get result
     
     if(empty($_POST['reservation_id'])== true) {
-        $result = mysqli_query($conn,  $sqlOneReservation);
+        $result = mysqli_query($conn, $sqlAllReservations);
     }else {
-        $result = mysqli_query($conn,  $sqlAllReservations);
+        $result = mysqli_query($conn,   $sqlOneReservation);
     };
      
     $reservation = mysqli_fetch_all($result, MYSQLI_ASSOC);  
