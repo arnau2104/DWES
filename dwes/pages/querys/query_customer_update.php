@@ -11,7 +11,7 @@
    $email = $_POST['email'];
    $phone = $_POST['phone'];
 
-   $sql = " UPDATE customers SET forename = '$forename', lastname = '$lastname', username = '$username', password = '$password', nif = '$nif', email = '$email', phone = '$phone' WHERE customer_id = '$customer_id' ";
+   $sql = " UPDATE 067_customers SET forename = '$forename', lastname = '$lastname', username = '$username', password = '$password', nif = '$nif', email = '$email', phone = '$phone' WHERE customer_id = '$customer_id' ";
    
    //make query and get result
     $result = mysqli_query($conn,  $sql); 

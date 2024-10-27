@@ -6,7 +6,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_conne
   $username = $_POST["username"];
  
     
-  $sql = "DELETE FROM customers WHERE username = '$username'";
+  $sql = "DELETE FROM 067_customers WHERE username = '$username'";
 
   //make query and get result
   $result = mysqli_query($conn, $sql);   

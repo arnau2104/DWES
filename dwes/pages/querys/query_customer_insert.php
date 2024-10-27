@@ -11,7 +11,7 @@
  $email = $_POST["email"];
  $phone = $_POST["phone"];
  
- $sql = "INSERT INTO customers (forename,lastname,username,password,nif,email,phone) VALUES
+ $sql = "INSERT INTO 067_customers (forename,lastname,username,password,nif,email,phone) VALUES
          ('$forename','$lastname','$username','$password','$nif','$email','$phone');";
 
  //make query and get result

@@ -29,15 +29,15 @@
           </ul></li>
           <ul><li><a href="#" class="text-white hover:text-gray-300">Rooms</a></li>
             <li><a href="/student067/dwes/pages/forms/form_place_select.php" class="text-white hover:text-gray-300">Select Room</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Insert Room</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Delete Room</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Update Room</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_place_insert.php" class="text-white hover:text-gray-300">Insert Room</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_place_delete.php" class="text-white hover:text-gray-300">Delete Room</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_place_update_call_id.php" class="text-white hover:text-gray-300">Update Room</a></li>
           </ul>
           <ul><li><a href="#" class="text-white hover:text-gray-300">Reservations</a></li>
             <li><a href="/student067/dwes/pages/forms/form_reservation_select.php" class="text-white hover:text-gray-300">Show Reservations</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_reservation_insert.php" class="text-white hover:text-gray-300">Do Reservations</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Delete Reservations</a></li>
-            <li><a href="/student067/dwes/pages/forms/form_room_select.php" class="text-white hover:text-gray-300">Update Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_reservation_choose_date.php" class="text-white hover:text-gray-300">Do Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_reservation_delete.php" class="text-white hover:text-gray-300">Delete Reservations</a></li>
+            <li><a href="/student067/dwes/pages/forms/form_reservation_call_id.php" class="text-white hover:text-gray-300">Update Reservations</a></li>
           </ul>
         </ul>
       </nav>

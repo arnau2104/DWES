@@ -3,7 +3,7 @@
 
 // write query
     $customer_id = $_POST['customer_id'];
-    $sql = "select * from customers where customer_id = '$customer_id'";
+    $sql = "select * from 067_customers where customer_id = '$customer_id' AND status=1";
     
     //make query and get result
     

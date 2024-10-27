@@ -5,6 +5,6 @@
 
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
 <main>
-<h1>Action file delete</h1>
+<h1>Customer deleted</h1>
 </main>
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>

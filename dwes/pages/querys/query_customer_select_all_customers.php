@@ -3,8 +3,8 @@
 
 // write query
      $customer_id = $_POST['customer_id'];
-    $sqlOneCustomer = "select * from 067_customers where customer_id = '$customer_id'";
-    $sqlAllCustomers =  "select * from 067_customers";
+    $sqlOneCustomer = "select * from 067_customers where customer_id = '$customer_id' AND status=1 ";
+    $sqlAllCustomers =  "select * from 067_customers WHERE status=1";
     //make query and get result
     
     if(empty($_POST['customer_id'])== true) {
