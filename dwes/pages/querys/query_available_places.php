@@ -1,5 +1,6 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php');
+       include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
+
 
 // write query
     $date_in = $_POST['date_in'];
@@ -17,4 +18,4 @@
      $result = mysqli_query($conn,  $available_places); 
     $place = mysqli_fetch_all($result, MYSQLI_ASSOC);  
     //$customer = mysqli_fetch_assoc($result); cuando solo hay un valor  
-    ?>
+    ?> 

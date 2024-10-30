@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +19,9 @@
 <header class="bg-blue-600 p-4">
     <div class="container mx-auto flex justify-between items-center">
       <!-- Logo -->
+       <!-- <img src="/student067/dwes/images/logoHotel.png" class="h-28"> -->
       <div class="text-white text-xl font-bold">
-        MiLogo
+       Mi Logo
       </div>
 
       <!-- Navegación -->
@@ -43,7 +50,14 @@
       </nav>
 
       <!-- Botón -->
-      <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200">Iniciar Sesión</a>
+       <?php if(empty($_SESSION['username']) == true){ ?>
+      <a href="/student067/dwes/pages/forms/form_customer_log_in.php" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200">Iniciar Sesión</a>
+      <?php } else { ?>
+        <div class="flex flex-col">
+          <p class="text-white">Hola <?php echo $_SESSION['username'];?></p>
+          <a href="/student067/dwes/pages/db/db_customer_log_out.php"><button class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200">Log Out</button></a>
+        </div>
+    <?php } ?>
     </div>
   </header>
   

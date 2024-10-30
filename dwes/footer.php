@@ -8,10 +8,14 @@
     <!-- Navegación -->
     <nav>
       <ul class="flex space-x-4">
-        <li><a href="#" class="hover:text-gray-400">Inicio</a></li>
+        <li><a href="/student067/dwes/index.php" class="hover:text-gray-400">Inicio</a></li>
         <li><a href="#" class="hover:text-gray-400">Servicios</a></li>
-        <li><a href="#" class="hover:text-gray-400">Acerca de</a></li>
         <li><a href="#" class="hover:text-gray-400">Contacto</a></li>
+        <li><ol><a href="#" class="hover:text-gray-400">Manuales</a>
+        <li><a href="/student067/dwes/pages/manual_installation.html" class="hover:text-gray-400 pl-3">Manual de Instalación</a></li>
+        <li><a href="/student067/dwes/pages/manual_tecnical.html"class="hover:text-gray-400 pl-3">Manual Tecnico</a></li>
+        <li><a href="/student067/dwes/pages/manual_user.html"class="hover:text-gray-400 pl-3">Manual de Usuario</a></li>
+        </ol></li>
       </ul>
     </nav>
 
