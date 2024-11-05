@@ -1,4 +1,3 @@
-
 <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
     <main>
      <div class="flex flex-col justify-center content w-6/12 justify-self-center mt-6">
