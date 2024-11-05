@@ -3,14 +3,14 @@
 
 
 // write query
-   $customer_id = $_POST['customer_id'];
-   $forename = $_POST['forename'];
-   $lastname = $_POST['lastname'];
-   $username = $_POST['username'];
-   $password = $_POST['password'];
-   $nif = $_POST['nif'];
-   $email = $_POST['email'];
-   $phone = $_POST['phone'];
+   $customer_id = htmlspecialchars($_POST['customer_id']);
+   $forename = htmlspecialchars($_POST['forename']);
+   $lastname = htmlspecialchars($_POST['lastname']);
+   $username = htmlspecialchars($_POST['username']);
+   $password = htmlspecialchars($_POST['password']);
+   $nif = htmlspecialchars($_POST['nif']);
+   $email = htmlspecialchars($_POST['email']);
+   $phone = htmlspecialchars($_POST['phone']);
 
    $sql = " UPDATE 067_customers SET forename = '$forename', lastname = '$lastname', username = '$username', password = '$password', nif = '$nif', email = '$email', phone = '$phone' WHERE customer_id = '$customer_id' ";
    

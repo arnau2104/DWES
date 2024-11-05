@@ -3,7 +3,7 @@
 
 
 // write query
-    $place_id = $_POST['place_id'];
+    $place_id = htmlspecialchars($_POST['place_id']);
     $sql = "select * from 067_places where place_id = '$place_id'";
     
     //make query and get result

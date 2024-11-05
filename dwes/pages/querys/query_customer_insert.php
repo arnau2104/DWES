@@ -4,13 +4,13 @@
 
 
  // write query
- $forename = $_POST["forename"];
- $lastname = $_POST["lastname"];
- $username = $_POST["username"];
- $password = $_POST["password"];
- $nif = $_POST["nif"];
- $email = $_POST["email"];
- $phone = $_POST["phone"];
+ $forename = htmlspecialchars($_POST["forename"]);
+ $lastname = htmlspecialchars($_POST["lastname"]);
+ $username = htmlspecialchars($_POST["username"]);
+ $password = htmlspecialchars($_POST["password"]);
+ $nif = htmlspecialchars($_POST["nif"]);
+ $email = htmlspecialchars($_POST["email"]);
+ $phone = htmlspecialchars($_POST["phone"]);
  
  $sql = "INSERT INTO 067_customers (forename,lastname,username,password,nif,email,phone) VALUES
          ('$forename','$lastname','$username','$password','$nif','$email','$phone');";

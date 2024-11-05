@@ -3,14 +3,14 @@
 
 
 // write query
-$username = $_POST['username'];
+$username = htmlspecialchars($_POST['username']);
    $sql_customer_id = "SELECT customer_id FROM 067_customers WHERE username ='$username' ;";
    $customer_id_result = mysqli_query($conn,  $sql_customer_id);
    $customer_id_assoc =mysqli_fetch_assoc($customer_id_result); 
    $customer_id =  implode($customer_id_assoc);
-   $place_id = $_POST['place_id'];
-   $date_in = $_POST['date_in'];
-   $date_out = $_POST['date_out'];
+   $place_id = htmlspecialchars($_POST['place_id']);
+   $date_in = htmlspecialchars($_POST['date_in']);
+   $date_out = htmlspecialchars($_POST['date_out']);
    $sql_price_per_day = "SELECT place_category_price
                     FROM 067_places_view
                     WHERE place_id = '$place_id';";

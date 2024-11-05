@@ -1,8 +1,8 @@
 <?php
 
   // if(isset($_POST['submit'])) {
-  //   echo $_POST['date_in']. '<br>';
-  //   echo $_POST['date_out']. '<br>';
+  //   echo htmlspecialchars($_POST['date_in']). '<br>';
+  //   echo htmlspecialchars($_POST['date_out']). '<br>';
   //   echo $_POST['personsNumber'];
   // };
 

@@ -3,8 +3,8 @@
 
 
 // write query
-    $date_in = $_POST['date_in'];
-    $date_out = $_POST['date_out'];
+    $date_in = htmlspecialchars($_POST['date_in']);
+    $date_out = htmlspecialchars($_POST['date_out']);
 
     $available_places = "SELECT * 
                         FROM 067_places_view

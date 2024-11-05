@@ -3,7 +3,7 @@
 include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php');
 
   // write query
-  $reservation_id = $_POST["reservation_id"];
+  $reservation_id = htmlspecialchars(htmlspecialchars($_POST['reservation_id']));
  
     
   $sql = "DELETE FROM 067_reservations WHERE reservation_id = '$reservation_id'";

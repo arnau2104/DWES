@@ -3,7 +3,7 @@
 
 
 // write query
-    $reservation_id = $_POST['reservation_id'];
+    $reservation_id = htmlspecialchars($_POST['reservation_id']);
     $sql = "select * from 067_reservations where reservation_id = '$reservation_id'";
     
     //make query and get result

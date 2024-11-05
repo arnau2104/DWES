@@ -3,12 +3,12 @@
 
 
 // write query
-     $customer_id = $_POST['customer_id'];
+    $customer_id = htmlspecialchars($_POST['customer_id']);
     $sqlOneCustomer = "select * from 067_customers where customer_id = '$customer_id' AND status=1 ";
     $sqlAllCustomers =  "select * from 067_customers WHERE status=1";
     //make query and get result
     
-    if(empty($_POST['customer_id'])== true) {
+    if(empty(htmlspecialchars($_POST['customer_id']))== true) {
         $result = mysqli_query($conn,  $sqlAllCustomers);
     }else {
         $result = mysqli_query($conn,  $sqlOneCustomer);
