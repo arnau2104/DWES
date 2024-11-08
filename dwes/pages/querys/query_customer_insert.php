@@ -12,7 +12,7 @@
  $email = htmlspecialchars($_POST["email"]);
  $phone = htmlspecialchars($_POST["phone"]);
  
- $sql = "INSERT INTO 067_customers (forename,lastname,username,password,nif,email,phone) VALUES
+ $sql = "INSERT INTO 067_users (forename,lastname,username,password,nif,email,phone) VALUES
          ('$forename','$lastname','$username','$password','$nif','$email','$phone');";
 
  //make query and get result

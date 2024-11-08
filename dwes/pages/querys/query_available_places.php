@@ -17,5 +17,5 @@
      
      $result = mysqli_query($conn,  $available_places); 
     $place = mysqli_fetch_all($result, MYSQLI_ASSOC);  
-    //$customer = mysqli_fetch_assoc($result); cuando solo hay un valor  
+    //user = mysqli_fetch_assoc($result); cuando solo hay un valor  
     ?> 

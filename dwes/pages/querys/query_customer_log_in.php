@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_conne
   $password = htmlspecialchars($_POST["password"]);
  
     
-  $sql = "SELECT * FROM 067_customers WHERE username = '$username' AND `password` = '$password'";
+  $sql = "SELECT * FROM 067_users WHERE username = '$username' AND `password` = '$password'";
 
   //make query and get result
   $result = mysqli_query($conn, $sql);   

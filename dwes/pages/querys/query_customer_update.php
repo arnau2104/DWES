@@ -3,7 +3,7 @@
 
 
 // write query
-   $customer_id = htmlspecialchars($_POST['customer_id']);
+   $user_id = htmlspecialchars($_POST['user_id']);
    $forename = htmlspecialchars($_POST['forename']);
    $lastname = htmlspecialchars($_POST['lastname']);
    $username = htmlspecialchars($_POST['username']);
@@ -12,7 +12,7 @@
    $email = htmlspecialchars($_POST['email']);
    $phone = htmlspecialchars($_POST['phone']);
 
-   $sql = " UPDATE 067_customers SET forename = '$forename', lastname = '$lastname', username = '$username', password = '$password', nif = '$nif', email = '$email', phone = '$phone' WHERE customer_id = '$customer_id' ";
+   $sql = " UPDATE 067_users SET forename = '$forename', lastname = '$lastname', username = '$username', password = '$password', nif = '$nif', email = '$email', phone = '$phone' WHERE user_id = '$user_id' ";
    
    //make query and get result
     $result = mysqli_query($conn,  $sql); 

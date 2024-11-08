@@ -3,14 +3,14 @@
 
 
 // write query
-    $customer_id = htmlspecialchars($_POST['customer_id']);
-    $sql = "select * from 067_customers where customer_id = '$customer_id' AND status=1";
+    $user_id = htmlspecialchars($_POST['user_id']);
+    $sql = "select * from 067_users where user_id = '$user_id' AND status=1 AND rol = 'customer'";
     
     //make query and get result
     
      $result = mysqli_query($conn,  $sql);
 
-     $customer = mysqli_fetch_all($result, MYSQLI_ASSOC);  
-     //$customer = mysqli_fetch_assoc($result); cuando solo hay un valor  
+     $user = mysqli_fetch_all($result, MYSQLI_ASSOC);  
+     //user = mysqli_fetch_assoc($result); cuando solo hay un valor  
      
      ?>

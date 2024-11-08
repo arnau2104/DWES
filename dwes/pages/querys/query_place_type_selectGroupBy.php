@@ -13,5 +13,5 @@
   
      
     $place_type = mysqli_fetch_all($result, MYSQLI_ASSOC);  
-    //$customer = mysqli_fetch_assoc($result); cuando solo hay un valor  
+    //user = mysqli_fetch_assoc($result); cuando solo hay un valor  
     ?>

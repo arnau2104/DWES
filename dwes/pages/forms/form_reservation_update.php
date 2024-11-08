@@ -10,7 +10,7 @@
       <input type="text"  name="reservation_id"  value="<?php echo $reservation[0]['reservation_id'];?>" hidden>
       <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Customer ID</label>
-          <input type="text"  name="customer_id" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" reservationholder="Your customer_id" value="<?php echo $reservation[0]['customer_id'];?>">
+          <input type="text"  name="user_id" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" reservationholder="Your user_id" value="<?php echo $reservation[0]['user_id'];?>">
         </div>
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Place ID</label>

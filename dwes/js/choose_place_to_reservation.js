@@ -1,10 +1,14 @@
 let place_id;
-// addEventListener('click', function() {
-//     place_id = document.target;
-//     console.log(place_id);
-// });
+let choose_room = document.getElementsByName("div")[0];
+let take_id_button = document.querySelector("take_id_button"); 
 
-// console.log("hola");
+
+addEventListener('click', function() {
+    place_id = document.target;
+    console.log(place_id);
+});
+
+console.log("hola");
 
 document.addEventListener('click', function(event) {
     // event.target es el elemento donde el usuario hizo clic
@@ -24,3 +28,7 @@ document.addEventListener('click', function(event) {
 if(!place_id == null) {
    
 }
+
+// take_id_button.addEventListener('click', ()=>{
+//     console.log("cliic");
+// });

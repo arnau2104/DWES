@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 p-6 mt-8">
+<footer class="h-auto bg-gray-800 p-6 mt-8 relative inset-x-0 bottom-0 h-16">
   <div class="container mx-auto text-white flex justify-between items-center">
     <!-- Logo o Nombre -->
     <div class="text-lg font-bold">
