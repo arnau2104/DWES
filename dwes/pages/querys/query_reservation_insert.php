@@ -3,11 +3,18 @@
 
 
 // write query
-$username = htmlspecialchars($_POST['username']);
+if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+    } else {
+        // Manejo en caso de que no esté definido (puedes redirigir o mostrar un mensaje)
+        print_r( "No se ha iniciado sesión.");
+         exit;
+    }
+// $username =  $_SESSION['username']; // htmlspecialchars($_POST['username']);
    $sql_user_id = "SELECT user_id FROM 067_users WHERE username ='$username' ;";
    $user_id_result = mysqli_query($conn,  $sql_user_id);
    $user_id_assoc =mysqli_fetch_assoc($user_id_result); 
-   $user_id =  implode($user_id_assoc);
+   $user_id =  $user_id_assoc['user_id'];
    $place_id = htmlspecialchars($_POST['place_id']);
    $date_in = htmlspecialchars($_POST['date_in']);
    $date_out = htmlspecialchars($_POST['date_out']);
@@ -15,8 +22,8 @@ $username = htmlspecialchars($_POST['username']);
                     FROM 067_places_view
                     WHERE place_id = '$place_id';";
    $price_per_day_result =  mysqli_query($conn,  $sql_price_per_day);
-   $price_per_day_assoc = mysqli_fetch_assoc($price_per_day_result);  
-   $price_per_day = implode($price_per_day_assoc);
+   $price_per_day_assoc = mysqli_fetch_assoc($price_per_day_result);   
+    $price_per_day = $price_per_day_assoc['place_category_price'];
    $sql = "INSERT INTO 067_reservations (user_id,place_id,date_in,date_out,price_per_day) VALUES
             ('$user_id', '$place_id', '$date_in', '$date_out', '$price_per_day') ";
 
@@ -26,7 +33,7 @@ $username = htmlspecialchars($_POST['username']);
     $result = mysqli_query($conn,  $sql);
     $resultSelect = mysqli_query($conn,$query); 
     $reservation = mysqli_fetch_assoc($resultSelect);  
-    print_r($reservation);
+    
     //clos connection to the db
     mysqli_close($conn);
     ?>

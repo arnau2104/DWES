@@ -1,10 +1,7 @@
-<?php   
-    include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_insert.php');
 
-?>
-
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
-<main class="conatiner">
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
+include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_insert.php');?>
+<main class="container">
     <!-- <p class="p-2">Reservation done, <a href="/student067/dwes/pages/invoice.php" target='_blanck' class="text-blue-600 underline font-bold">click here</a> to watch the invoice!</p> -->
     
     <?php
