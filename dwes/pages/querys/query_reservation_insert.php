@@ -5,9 +5,11 @@
 // write query
 if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
+        unset($_SESSION['log_in_message'])
     } else {
         // Manejo en caso de que no esté definido (puedes redirigir o mostrar un mensaje)
-        print_r( "No se ha iniciado sesión.");
+        $_SESSION['log_in_message'] = "Inicia Session para poder hacer una reserva!";
+        header('Location: /student067/dwes/pages/forms/form_customer_log_in.php');
          exit;
     }
 // $username =  $_SESSION['username']; // htmlspecialchars($_POST['username']);
@@ -15,7 +17,13 @@ if (isset($_SESSION['username'])) {
    $user_id_result = mysqli_query($conn,  $sql_user_id);
    $user_id_assoc =mysqli_fetch_assoc($user_id_result); 
    $user_id =  $user_id_assoc['user_id'];
-   $place_id = htmlspecialchars($_POST['place_id']);
+   if(isset($_POST['place_id']) && !$_POST['place_id']==null) {
+   
+    $place_id = htmlspecialchars($_POST['place_id']);
+   }else {
+    print_r("Place Id no introduit");
+    exit;
+   }
    $date_in = htmlspecialchars($_POST['date_in']);
    $date_out = htmlspecialchars($_POST['date_out']);
    $sql_price_per_day = "SELECT place_category_price

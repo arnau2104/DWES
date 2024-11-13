@@ -1,6 +1,9 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
   <!-- Formulario -->
   <main class="container mx-auto py-8">
+    <?php if(isset($_SESSION['log_in_message'])) { ?>
+      <h2 class="text-red-600 text-center text-xl pb-8"> <?php echo $_SESSION['log_in_message'] ?></h2>
+   <?php } ?>
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Log In</h2>
       <form action="/student067/dwes/pages/db/db_customer_log_in.php" method="POST">

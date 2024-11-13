@@ -18,7 +18,7 @@
             <!-- <button class="take_id_button bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200"  id="<?php echo $place[$i]['place_id']?>">Select Room</button> -->
             <div class="flex justify-center">
             <form action="/student067/dwes/pages/db/db_reservation_insert.php" method="POST">
-            <input type="number" name="place_id" id="place_id_input" value =" <?php echo $place[$i]['place_id']?>" hidden>
+            <input type="number" name="place_id" id="place_id_input" value ="<?php echo $place[$i]['place_id']?>" hidden>
             <input type="date" name="date_in" value="<?php echo htmlspecialchars($_POST['date_in'])?>" hidden>
             <input type="date" name="date_out" value="<?php echo htmlspecialchars($_POST['date_out'])?>" hidden>
             <!-- <input type="text" name="username" value="<?php echo /*htmlspecialchars($_POST['username']*/ $_SESSION['username'];?>" hidden> -->
@@ -30,5 +30,5 @@
         
        
     </main>
-    <script src="/student067/dwes/js/choose_place_to_reservation.js"></script>
+    <!-- <script src="/student067/dwes/js/choose_place_to_reservation.js"></script> -->
    <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>
