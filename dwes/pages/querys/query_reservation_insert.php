@@ -5,7 +5,7 @@
 // write query
 if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
-        unset($_SESSION['log_in_message'])
+        unset($_SESSION['log_in_message']);
     } else {
         // Manejo en caso de que no esté definido (puedes redirigir o mostrar un mensaje)
         $_SESSION['log_in_message'] = "Inicia Session para poder hacer una reserva!";

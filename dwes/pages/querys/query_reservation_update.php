@@ -9,8 +9,9 @@
    $date_in = htmlspecialchars($_POST['date_in']);
    $date_out = htmlspecialchars($_POST['date_out']);
    $price_per_day = htmlspecialchars($_POST['price_per_day']);
+   $reservation_status = htmlspecialchars($_POST['reservation_state']);
 
-   $sql = " UPDATE 067_reservations SET user_id = '$user_id', place_id = '$place_id', date_in = '$date_in', date_out = '$date_out', price_per_day = '$price_per_day' WHERE reservation_id = '$reservation_id' ";
+   $sql = " UPDATE 067_reservations SET user_id = '$user_id', place_id = '$place_id', date_in = '$date_in', date_out = '$date_out', price_per_day = '$price_per_day' , reservation_state = '$reservation_status'  WHERE reservation_id = '$reservation_id' ";
    
    //make query and get result
     $result = mysqli_query($conn,  $sql); 

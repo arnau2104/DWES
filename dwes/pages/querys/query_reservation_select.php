@@ -5,7 +5,7 @@
 // write query
      $reservation_id = htmlspecialchars($_POST['reservation_id']);
     $sqlOneReservation = "SELECT * FROM 067_reservations_view WHERE reservation_id = '$reservation_id'";
-    $sqlAllReservations =  "SELECT * FROM 067_reservations_view";
+    $sqlAllReservations =  "SELECT * FROM 067_reservations_view ORDER BY reservation_id";
     //make query and get result
     
     if(empty(htmlspecialchars($_POST['reservation_id']))== true) {

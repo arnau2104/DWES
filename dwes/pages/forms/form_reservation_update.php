@@ -28,6 +28,15 @@
           <label for="name" class="block text-gray-700 font-bold mb-2">Price Per Day</label>
           <input type="number" name="price_per_day" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" reservationholder="Your price_per_day" value="<?php echo $reservation[0]['price_per_day'];?>">
         </div>
+        <div class="mb-4">
+        <label for="reservation_state" class="block text-gray-700 font-bold mb-2">Reservation State</label>
+          <select name="reservation_state" class="block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">  >
+            <option value="check-in">Check In</option>
+            <option value="chek-out">Check Out</option>
+            <option value="book">Book</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
         <div class="text-center">
           <button type="submit" name="submitUpdate" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Submit</button>
         </div>
