@@ -4,7 +4,7 @@
 
 // write query
     $user_id = htmlspecialchars($_POST['user_id']);
-    $sql = "select * from 067_users where user_id = '$user_id' AND status=1 AND rol = 'customer'";
+    $sql = "select * from 067_users where user_id = '$user_id' AND status=1 AND rols = 'customer'";
     
     //make query and get result
     

@@ -1,8 +1,9 @@
 <?php
 
-      include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
+   include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
 
    include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
+   include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');
 
      // write query
      $username = htmlspecialchars($_POST["username"]);
@@ -18,10 +19,11 @@
      
 
      if(empty($user) == false) {
-       
-      $_SESSION['username'] = $user['username'];
-        
-    header('Location: /student067/dwes/index.php');
+
+       $_SESSION['username'] = $user['username'];
+      asingSessionRols($user);
+      header('Location: /student067/dwes/index.php');           
+    
      }else {
         echo 'error al hacer log in';
      };

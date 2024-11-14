@@ -2,7 +2,11 @@
   <!-- Formulario -->
   <main class="container mx-auto py-8">
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+      <?php if(isset($_SESSION['username'])) { ?>
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Customer Insert Form</h2>
+      <?php }else { ?>
+        <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Register Form</h2>
+        <?php }; ?>
       <form action="/student067/dwes/pages/db/db_customer_insert.php" method="POST">
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Forename</label>

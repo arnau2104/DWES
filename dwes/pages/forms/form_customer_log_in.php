@@ -14,9 +14,13 @@
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Password</label>
           <input type="text"  name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your password here" >
+          <p class="text-blue-500">Forgot password?</p>
         </div>
         <div class="text-center">
           <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Log in</button>
+        </div>
+        <div class="text-center">
+          <p>Don't hav an account? <a href="/student067/dwes/pages/forms/form_customer_insert.php" class="text-green-500">Register here!</a></p>
         </div>
       </form>
     </div>

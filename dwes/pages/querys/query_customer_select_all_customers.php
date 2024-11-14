@@ -4,8 +4,8 @@
 
 // write query
     $user_id = htmlspecialchars($_POST['user_id']);
-    $sqlOneCustomer = "select * from 067_users where user_id = '$user_id' AND status=1 AND rol = 'customer' ";
-    $sqlAllCustomers =  "select * from 067_users WHERE status=1 AND rol = 'customer'";
+    $sqlOneCustomer = "select * from 067_users where user_id = '$user_id' AND status=1 AND rols = 'customer' ";
+    $sqlAllCustomers =  "select * from 067_users WHERE status=1 AND rols = 'customer'";
     //make query and get result
     
     if(empty(htmlspecialchars($_POST['user_id']))== true) {
