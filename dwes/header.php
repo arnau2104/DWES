@@ -52,7 +52,9 @@ session_start();
           <li><a href="#" class="text-white hover:text-gray-300">Reservations</a><ul>   
             <li><a href="/student067/dwes/pages/forms/form_reservation_select.php" class="text-white hover:text-gray-300">Show Reservations</a></li> 
             <li><a href="/student067/dwes/pages/forms/form_reservation_choose_date.php" class="text-white hover:text-gray-300">Do Reservations</a></li>
+            <?php  if(!in_array("customer",$_SESSION['rols'][0]) || (in_array("admin",$_SESSION['rols'][0]) || in_array("employee",$_SESSION['rols'][0]) )) {  ?>
             <li><a href="/student067/dwes/pages/forms/form_reservation_delete.php" class="text-white hover:text-gray-300">Delete Reservations</a></li>
+            <?php  } ?>
             <li><a href="/student067/dwes/pages/forms/form_reservation_call_id.php" class="text-white hover:text-gray-300">Update Reservations</a></li>
             <?php } ?>
           </ul></li>
