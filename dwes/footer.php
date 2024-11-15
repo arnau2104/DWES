@@ -2,7 +2,7 @@
   <div class="container mx-auto text-white flex justify-between items-center">
     <!-- Logo o Nombre -->
     <div class="text-lg font-bold">
-      MiLogo
+      Arnau's Hotels
     </div>
 
     <!-- Navegación -->

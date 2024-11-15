@@ -11,4 +11,11 @@ function asingSessionRols ($user) {
          };
          };
 
+         function datediff ($date_in,$date_out) {
+            $dateIn = new DateTime($date_in);
+            $dateOut = new DateTime($date_out); 
+            $diff = $dateIn->diff($dateOut);
+             return $diff->d;
+         };
+
 ?>

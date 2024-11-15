@@ -20,8 +20,8 @@ session_start();
     <div class="container mx-auto flex justify-between items-center">
       <!-- Logo -->
        <!-- <img src="/student067/dwes/images/logoHotel.png" class="h-28"> -->
-      <div class="text-white text-xl font-bold">
-       Mi Logo
+      <div class="w-24">
+       <img src="/student067/dwes/images/logo.png" alt="">
       </div>
 
       <!-- Navegación -->
