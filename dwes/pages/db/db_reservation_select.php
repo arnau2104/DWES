@@ -18,11 +18,13 @@
             <p><span class="font-bold"> Place Type Name: </span> <?php echo $reservation[$i]['place_type_name'];?> </p>
             <p><span class="font-bold"> Place Category Name: </span> <?php echo $reservation[$i]['place_category_name']; ?></p>
             <p><span class="font-bold">Place Category Price: </span> <?php echo $reservation[$i]['place_category_price']; ?> </p>
+            <p><span class="font-bold">Date In: </span> <?php echo $reservation[$i]['date_in']; ?> </p>
+            <p><span class="font-bold">Date Out: </span> <?php echo $reservation[$i]['date_out']; ?> </p>
             <p><span class="font-bold">Reservation State: </span> <?php echo $reservation[$i]['reservation_state']; ?> </p>
             <?php if(strcasecmp($reservation[$i]['reservation_state'],'check-out') == 0) { ?>
                 <form action="/student067/dwes/pages/invoice.php" method="POST">
                     <input type="number" name="reservation_id" value ="<?php echo $reservation[$i]['reservation_id']; ?>" hidden>
-                    <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Show Invoice</button>
+                    <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Show Invoice</button>
                 </form>
               
                 <?php }; ?> 

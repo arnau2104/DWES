@@ -29,11 +29,11 @@ include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservati
         </div>
         <div class="mb-4">
         <label for="reservation_state" class="block text-gray-700 font-bold mb-2">Reservation State</label>
-          <select name="reservation_state" class="block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">  >
-            <option value="check-in">Check In</option>
-            <option value="chek-out">Check Out</option>
-            <option value="book">Book</option>
-            <option value="cancelled">Cancelled</option>
+          <select name="reservation_state" class="block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">  
+            <option value="check-in" <?php if($reservation[0]['reservation_state'] == 'check-in') {echo 'selected';};?>>Check In</option>
+            <option value="chek-out" <?php if($reservation[0]['reservation_state'] == 'check-out') {echo 'selected';};?>>Check Out</option>
+            <option value="book" <?php if($reservation[0]['reservation_state'] == 'book') {echo 'selected';};?> >Book</option>
+            <option value="cancelled" <?php if($reservation[0]['reservation_state'] == 'cancelled') {echo 'selected';};?>>Cancelled</option>
           </select>
         </div>
         <div class="text-center">

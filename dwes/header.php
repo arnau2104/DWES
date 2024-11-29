@@ -21,7 +21,7 @@ session_start();
       <!-- Logo -->
        <!-- <img src="/student067/dwes/images/logoHotel.png" class="h-28"> -->
       <div class="w-24">
-       <img src="/student067/dwes/images/logo.png" alt="">
+       <a href="/student067/dwes/index.php"><img src="/student067/dwes/images/logo.png" alt=""></a>
       </div>
 
       <!-- Navegación -->
@@ -58,6 +58,9 @@ session_start();
             <li><a href="/student067/dwes/pages/forms/form_reservation_call_id.php" class="text-white hover:text-gray-300">Update Reservations</a></li>
             <?php } ?>
           </ul></li>
+          <?php if(isset($_SESSION['rols'])) { ?>
+          <li><a href="/student067/dwes/pages/forms/form_services.php" class="text-white hover:text-gray-300">Services</li>
+          <?php } ?>
         </ul>
       </nav>
 

@@ -13,7 +13,7 @@
         </div>
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Password</label>
-          <input type="text"  name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your password here" >
+          <input type="password"  name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your password here" >
           <p class="text-blue-500">Forgot password?</p>
         </div>
         <div class="text-center">

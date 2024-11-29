@@ -1,5 +1,11 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
 <main class="container mx-auto py-8">
+
+  <?php if(isset($_SESSION['username']) && (in_array('customer',$_SESSION['rols'][0]) && (!in_array('admin',$_SESSION['rols'][0]) && !in_array('employee', $_SESSION['rols'][0])))) {
+    header('Location: /student067/dwes/pages/forms/form_customer_update.php');
+  } else {
+  ?>
+
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Customer Update Form</h2>
       <form action="/student067/dwes/pages/forms/form_customer_update.php" method="POST">
@@ -11,5 +17,7 @@
         </div>
       </form>
     </div>
+
+    <?php } ?>
   </main>
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>

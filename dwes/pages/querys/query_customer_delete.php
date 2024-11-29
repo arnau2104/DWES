@@ -3,8 +3,15 @@
 include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php');
 
   // write query
+  if(isset($_SESSION['username']) && (in_array('customer',$_SESSION['rols'][0]) && (!in_array('admin',$_SESSION['rols'][0]) && !in_array('employee', $_SESSION['rols'][0])))) {
+   
+    $username = $_SESSION['username'];
+    
+    
+}else { 
+  
   $username = htmlspecialchars($_POST["username"]);
- 
+}
     
   $sql = "DELETE FROM 067_users WHERE username = '$username'";
 

@@ -6,6 +6,10 @@
     $date_in = htmlspecialchars($_POST['date_in']);
     $date_out = htmlspecialchars($_POST['date_out']);
 
+
+   setCookie('date_in' , $date_in, time() + 86400, "/student067/dwes");
+   setCookie('date_out' , $date_out, time() + 86400, "/student067/dwes");
+
     $available_places = "SELECT * 
                         FROM 067_places_view
                         WHERE place_id NOT IN (SELECT place_id
