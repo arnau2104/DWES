@@ -1,6 +1,30 @@
 <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
     <main>
     
+    <!-- we read the extras from the reservation -->
+
+    <?php 
+    // $reservation_id = http_build_query(1);
+
+    // $options = [
+    //     'http' => [
+    //         'method' => 'POST', //Especificamos que es una solicitud POST
+    //         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",  // Tipo de contenido
+    //         'content' => $reservation_id,  // Los datos a enviar
+    //     ]
+    // ];
+
+    // curl_init();
+
+    
+     include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId.php');
+    
+    echo $reservation['extras_json'] ?? 'buit' . '<br>';
+    print_r( $reservation);
+    
+
+    ?>
+
 
         <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700   w-96 flex flex-col extra">
             <form action="/student067/dwes/pages/forms/form_services.php" method="POST" >
@@ -45,11 +69,12 @@
                     </div>
                 </div>
             
-                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" hidden>
+                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" >
+                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" >
                 <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" >
                 <input type="text" name="service" value="spa" hidden>
                 <input type="number" name="unit_price" class="unit_price" value="" hidden >
-                <button type="submit" name="submit" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <button type="submit" name="submitExtras" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
             </form>
         </div>   
 
@@ -98,12 +123,12 @@
                     </div>
                 </div>
             
-                
-                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" hidden>
+                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" >
+                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" >
                 <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" >
-                <input type="text" name="service" class="service" hidden>
+                <input type="text" name="service" value="horse_excursion" hidden>
                 <input type="number" name="unit_price" class="unit_price" value="" hidden >
-                <button type="submit" name="submit" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <button type="submit" name="submitExtras" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
             </form>
         </div>
 
@@ -112,13 +137,14 @@
     
     include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
     
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['submitExtras'])) {
 
         $service = $_POST['service'];
         $concept = $_POST['concept'];
         $dateTime_in = $_POST['dateTime_in'];
         $dateTime_out = $_POST['dateTime_out'];
         $unit_price = $_POST["unit_price"];
+        $reservation_id = $_POST['reservation_id'];
 
         // Crear el JSON para extras_json
     $extras_json = json_encode([
@@ -136,16 +162,16 @@
         ]
     ]);
 
-        $sql = "UPDATE 067_reservations SET extras_json = '$extras_json' WHERE reservation_id = 1;";
+        $sql = "UPDATE 067_reservations SET extras_json = '$extras_json' WHERE reservation_id = $reservation_id;";
 
             $result = mysqli_query($conn, $sql);
             
             
             $sql2 = "SELECT * FROM 067_reservations WHERE reservation_id = 1;";
             $result2 = mysqli_query($conn, $sql2);
-            $reservation = mysqli_fetch_assoc($result2);
+            $reservation2 = mysqli_fetch_assoc($result2);
             
-            print_r($reservation['extras_json']);
+            print_r($reservation2['extras_json']);
 
 
 
@@ -160,9 +186,9 @@
     <!-- <aside class="float-right bg-rose-500 h-full absolute top-20 right-0">
         <h1>Serices Bookeds unitl Now:</h1>
 
-        <!-- <ul>
-            <li><?php echo $service . $concept . "-->Price: " . $unit_price ; ?></li>
-        </ul> -->
+         <ul>
+            <li><?php// echo $service . $concept . "-->Price: " . $unit_price ; ?></li>
+        </ul> 
 
     </aside> -->
 

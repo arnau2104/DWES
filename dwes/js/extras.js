@@ -1,5 +1,7 @@
 let extras = document.querySelectorAll(".extra");
 
+let date = new Date();
+let today = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
 
 
 
@@ -116,8 +118,10 @@ interval1.addEventListener('click', (e)=> {
       time_out = element.substring(8, element.length);
       console.log(time_out);
 
-        dateTime_in.value = "2024-11-26T" + time_in;
-        dateTime_out.value = "2024-11-26T" + time_out;
+  
+
+        dateTime_in.value = today + "T" + time_in;
+        dateTime_out.value = today + "T" + time_out;
 
     
 });
