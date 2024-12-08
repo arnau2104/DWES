@@ -19,9 +19,7 @@ function datediff ($date_in,$date_out) {
  };
 ?>
 <?php
-function printReservations ($reservations) {
-   foreach($reservations as $reservation):
-   ?>
+function printReservation ($reservation) { ?>
    <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">Reservation Information</h2> 
    <p ><span class="font-bold">Reservation ID:</span> <?php echo $reservation['reservation_id'];?></p>
    <p><span class="font-bold">Forename: </span> <?php echo $reservation['forename'];?> </p> 
@@ -33,7 +31,7 @@ function printReservations ($reservations) {
    <p><span class="font-bold">Date Out: </span> <?php echo $reservation['date_out']; ?> </p>
    <p><span class="font-bold">Reservation State: </span> <?php echo $reservation['reservation_state']; ?> </p>
    <?php
-   endforeach;
+   
 }
 ?>
  
