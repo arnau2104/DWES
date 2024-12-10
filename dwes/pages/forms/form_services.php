@@ -69,9 +69,9 @@
                     </div>
                 </div>
             
-                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" >
-                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" >
-                <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" >
+                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" hidden>
+                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" hidden >
+                <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" hidden>
                 <input type="text" name="service" value="spa" hidden>
                 <input type="number" name="unit_price" class="unit_price" value="" hidden >
                 <button type="submit" name="submitExtras" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
@@ -81,7 +81,7 @@
     
 
         <!-- excursion a caballo -->
-        <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700   w-96 flex flex-col extra">
+        <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700 w-96 flex flex-col extra">
             <form action="/student067/dwes/pages/forms/form_services.php" method="POST" >
                 <h2 class="font-bold text-center text-xl pb-2" id="horse_excursion">Excursion a Caballo</h2>
                 <img src="/student067/dwes/images/horse_excursion.jpg" alt="">
@@ -122,13 +122,13 @@
                             <div class="p-2 bg-blue-500 text-white text-center rounded-md shadow-md text-sm hover:cursor-pointer" id="19:00 - 20:00">19:00 - 20:00</div>
                     </div>
                 </div>
-            
-                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" >
-                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" >
-                <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" >
+
+                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" hidden>
+                <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" hidden>
+                <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" hidden>
                 <input type="text" name="service" value="horse_excursion" hidden>
                 <input type="number" name="unit_price" class="unit_price" value="" hidden >
-                <button type="submit" name="submitExtras" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <button type="submit" name="submitExtras" class="self-center bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
             </form>
         </div>
 

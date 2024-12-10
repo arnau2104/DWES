@@ -1,6 +1,6 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
 
-    <main>
+    <main class="relative">
         
         <?php 
         // if(isset($_POST['submit_update_reservation_state'])) {
@@ -24,10 +24,11 @@
         }else {
             if(empty($reservations)== true) {
                 echo '<h1> Any reservation was founded</h1>';
-            }elseif($reservations && (!isset($_POST['submit_check_in']))) {
+            }elseif($reservations && (!isset($_POST['submit_check_in']))) { ?>
             
-                foreach($reservations as $reservation){ ?>
-                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700  hover:scale-110 w-96">
+                <div class="flex justify-center flex-wrap gap-4">
+                <?php foreach($reservations as $reservation){ ?>
+                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96">
                             <?php printReservation($reservation) ?>
                         <div class="flex gap-2">
                             <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0) { ?>
@@ -44,7 +45,9 @@
                         </div> 
                     </div>
                
-        <?php }}}; ?>
+        <?php } ?>
+        </div>
+       <?php  }}; ?>
         <?php
          if(isset($_POST['submit_check_in'])) { ?>
            <div class="flex flex-col justify-center">

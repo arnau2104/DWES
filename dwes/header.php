@@ -16,7 +16,7 @@ session_start();
 
 </head>
 <body class="box-border">
-<header class="bg-blue-600 p-4">
+<header class="bg-blue-600 p-4 z-20 relative">
   <div class="container mx-auto flex justify-between items-center">
     <!-- Logo -->
     <div class="w-24">
