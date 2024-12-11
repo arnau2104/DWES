@@ -4,9 +4,9 @@
 
 // write query
 
-
+if(isset($_POST['submit'])){
     $reservation_id = htmlspecialchars($_POST['reservation_id']);
-    $sql = "select * from 067_reservations_view where reservation_id = '$reservation_id'";
+    $sql = "select * from 067_reservations_view WHERE reservation_id = '$reservation_id'";
     
     //make query and get result
     
@@ -14,5 +14,6 @@
 
      $reservation = mysqli_fetch_all($result, MYSQLI_ASSOC);  
      //user = mysqli_fetch_assoc($result); cuando solo hay un valor  
+}
      
      ?>

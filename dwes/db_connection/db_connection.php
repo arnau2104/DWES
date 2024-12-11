@@ -1,8 +1,8 @@
 <?php
-$server = 'remotehost.es';
-$user = 'dwess1234';
-$password = 'test1234.';
-$db_name = 'dwesdatabase';
+$server = 'localhost';
+$user = 'root';
+$password = '';
+$db_name = '067_hotel_managment_system';
 
 //connect to databas
 $conn = mysqli_connect($server, $user, $password, $db_name );

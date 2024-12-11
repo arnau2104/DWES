@@ -5,7 +5,11 @@
 <?php
     if(isset($_POST['submit'])){ 
     include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId.php');
-    include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');?>
+    include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');
+
+     $extras = json_decode($reservation[0]['extras_json'],true);
+     print_r($extras);
+?>
   
 <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
     <!-- Encabezado de la Factura -->
@@ -54,6 +58,16 @@
           <td class="py-2 text-right text-gray-700"><?php echo $reservation[0]['price_per_day']?>€</td>
           <td class="py-2 text-right text-gray-700"><?php echo $reservation[0]['subtotal'] ?>€</td>
         </tr>
+
+        <?php foreach($extras as $extra) { ?>
+          <?php print_r($extra); echo '<br>' ?>
+          <tr class="border-t">
+            <td class="py-2 text-gray-700"><?php echo array_keys($extra) .': '. ucfirst($extra['concept']); ?> </td>
+            <td class="py-2 text-right text-gray-700">1</td>
+            <td class="py-2 text-right text-gray-700"><?php echo $extra['unitPrice'];?>€</td>
+            <td class="py-2 text-right text-gray-700"><?php echo $extra['unitPrice']; ?>€</td>
+          </tr>
+        <?php };?>  
     
       </tbody>
     </table>

@@ -1,7 +1,14 @@
 <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
-    <main>
-    
-    <!-- we read the extras from the reservation -->
+    <main class="flex flex-col justify-center">
+   
+   <?php if(!isset($_POST['submit'])){ ?>
+
+    <div class=" flex flex-col justify-center self-center my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg border hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-[500px]">
+        <h1 class="font-semibold text-center my-6 text-gray-800 text-xl">Choose you reservation</h1>
+        <a href="/student067/dwes/pages/db/db_reservation_select.php"><button  class=" w-full bg-[#FF6F3C] text-black px-4 py-2 rounded-lg hover:bg-[#FF825C] transition-colors duration-200 mt-2">Choose</button></a>
+    </div>
+
+    <?php };?>
 
     <?php 
     // $reservation_id = http_build_query(1);
@@ -19,14 +26,13 @@
     
      include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId.php');
     
-    echo $reservation['extras_json'] ?? 'buit' . '<br>';
-    print_r( $reservation);
-    
-
+   
     ?>
 
+    
 
-        <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700   w-96 flex flex-col extra">
+    <section class="flex justify-center gap-8">
+        <div class="my-4 max-w-md  bg-white p-6 rounded-lg shadow-md  shadow-gray-700   w-96 flex flex-col extra">
             <form action="/student067/dwes/pages/forms/form_services.php" method="POST" >
                 <h2 class="font-bold text-center text-xl pb-2" id="spa">SPA</h2>
                 <img src="/student067/dwes/images/spa.jpg" alt="">
@@ -74,14 +80,16 @@
                 <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" hidden>
                 <input type="text" name="service" value="spa" hidden>
                 <input type="number" name="unit_price" class="unit_price" value="" hidden >
-                <button type="submit" name="submitExtras" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <?php if(isset($_POST['submit'])){ ?>
+                <button type="submit" name="submitExtras" class=" w-full bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <?php };?>
             </form>
         </div>   
 
     
 
         <!-- excursion a caballo -->
-        <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700 w-96 flex flex-col extra">
+        <div class=" my-4 max-w-md  bg-white p-6 rounded-lg shadow-md shadow-gray-700 w-96 flex flex-col extra">
             <form action="/student067/dwes/pages/forms/form_services.php" method="POST" >
                 <h2 class="font-bold text-center text-xl pb-2" id="horse_excursion">Excursion a Caballo</h2>
                 <img src="/student067/dwes/images/horse_excursion.jpg" alt="">
@@ -128,10 +136,12 @@
                 <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" hidden>
                 <input type="text" name="service" value="horse_excursion" hidden>
                 <input type="number" name="unit_price" class="unit_price" value="" hidden >
-                <button type="submit" name="submitExtras" class="self-center bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <?php if(isset($_POST['submit'])){ ?>
+                    <button type="submit" name="submitExtras" class="w-full self-center bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-200 mt-2">Book</button>
+                <?php }; ?>
             </form>
         </div>
-
+    </section>
        
     <?php  
     
@@ -147,20 +157,24 @@
         $reservation_id = $_POST['reservation_id'];
 
         // Crear el JSON para extras_json
-    $extras_json = json_encode([
-        $service => [
-            "concept" => $concept,
-            "dateTime_in" => $dateTime_in,
-            "dateTime_out" => $dateTime_out,
-            "unitPrice" => $unit_price
-        ] ,
-        "restaurant" => [
-            "concept" => "dinner" ,
-            "dateTime_in" => "2024-11-26T20:00",
-            "dateTime_our" => "2024-11-26T22:00",
-            "unit_price" => 89
-        ]
-    ]);
+        $extras= json_decode($reservation[0]['extras_json'],true);
+               
+        $extras[$service][] =  [
+                    "concept" => $concept,
+                    "dateTime_in" => $dateTime_in,
+                    "dateTime_out" => $dateTime_out,
+                    "unitPrice" => $unit_price
+                ];
+
+           
+               
+              
+          
+
+            print_r($extras);
+            
+       
+        $extras_json = json_encode($extras);
 
         $sql = "UPDATE 067_reservations SET extras_json = '$extras_json' WHERE reservation_id = $reservation_id;";
 
@@ -171,15 +185,13 @@
             $result2 = mysqli_query($conn, $sql2);
             $reservation2 = mysqli_fetch_assoc($result2);
             
-            print_r($reservation2['extras_json']);
+            // print_r($reservation2['extras_json']);
 
 
 
      
 
-    }else {
-        echo "ningun resultado encontrado";
-    };
+    }
     
     ?>
 
@@ -187,7 +199,7 @@
         <h1>Serices Bookeds unitl Now:</h1>
 
          <ul>
-            <li><?php// echo $service . $concept . "-->Price: " . $unit_price ; ?></li>
+           
         </ul> 
 
     </aside> -->

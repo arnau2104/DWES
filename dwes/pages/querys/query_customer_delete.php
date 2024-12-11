@@ -13,7 +13,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_conne
   $username = htmlspecialchars($_POST["username"]);
 }
     
-  $sql = "DELETE FROM 067_users WHERE username = '$username'";
+  $sql = "UPDATE 067_users SET status = 0 WHERE username = '$username'";
 
   //make query and get result
   $result = mysqli_query($conn, $sql);   
