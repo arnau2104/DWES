@@ -8,7 +8,12 @@
     include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');
 
      $extras = json_decode($reservation[0]['extras_json'],true);
-     print_r($extras);
+    //  print_r($extras);
+     foreach(array_keys($extras) as $service ){
+                echo "$service <br>";
+                print_r ($extras[$service]);
+                echo '<br>';
+            };
 ?>
   
 <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -59,10 +64,14 @@
           <td class="py-2 text-right text-gray-700"><?php echo $reservation[0]['subtotal'] ?>€</td>
         </tr>
 
-        <?php foreach($extras as $extra) { ?>
-          <?php print_r($extra); echo '<br>' ?>
+   
+    <?php  
+    // foreach(array_keys($extras) as $service){
+    //   $servicename = $service;
+      foreach($extras as $extra) { ?>
+         <!-- php print_r($extra); echo '<br>' ?> -->
           <tr class="border-t">
-            <td class="py-2 text-gray-700"><?php echo array_keys($extra) .': '. ucfirst($extra['concept']); ?> </td>
+            <td class="py-2 text-gray-700"><?php echo ucfirst($extra['concept']); ?> </td>
             <td class="py-2 text-right text-gray-700">1</td>
             <td class="py-2 text-right text-gray-700"><?php echo $extra['unitPrice'];?>€</td>
             <td class="py-2 text-right text-gray-700"><?php echo $extra['unitPrice']; ?>€</td>

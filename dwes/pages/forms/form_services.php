@@ -25,8 +25,7 @@
 
     
      include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId.php');
-    
-   
+//    print_r(json_decode($reservation[0]['extras_json']));
     ?>
 
     
@@ -155,23 +154,30 @@
         $dateTime_out = $_POST['dateTime_out'];
         $unit_price = $_POST["unit_price"];
         $reservation_id = $_POST['reservation_id'];
+            include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId2.php');
 
         // Crear el JSON para extras_json
-        $extras= json_decode($reservation[0]['extras_json'],true);
-               
-        $extras[$service][] =  [
+        $extras= json_decode($reservation[0]['extras_json'],true); 
+        // print_r($extras);
+       
+
+        $extras[$service][] = [ 
                     "concept" => $concept,
                     "dateTime_in" => $dateTime_in,
                     "dateTime_out" => $dateTime_out,
                     "unitPrice" => $unit_price
                 ];
 
-           
+   
                
               
           
 
-            print_r($extras);
+            // foreach(array_keys($extras) as $service ){
+            //     echo "$service <br>";
+            //     print_r ($extras[$service]);
+            //     echo '<br>';
+            // };
             
        
         $extras_json = json_encode($extras);
