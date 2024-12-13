@@ -35,5 +35,8 @@
 <!-- <script src="./js/menu_header.js"></script> -->
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/student067/dwes/js/search_filter.js"></script>
+  <script src="/student067/dwes/js/extras.js"></script>
+
 </body>
 </html>

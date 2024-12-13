@@ -1,8 +1,12 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
 
     <main class="relative">
-        
-    <input type="search">
+       
+    <div class="flex fixed right-0 px-2 py-1 z-20">
+    <input type="text" id="search-box" placeholder="Search..." class="border-black border rounded-lg p-2">
+    </div>
+
+    <div class="main-content">
 
         <?php 
         // if(isset($_POST['submit_update_reservation_state'])) {
@@ -30,7 +34,7 @@
             
                 <div class="flex justify-center flex-wrap gap-4">
                 <?php foreach($reservations as $reservation){ ?>
-                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96">
+                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96 search-content">
                             <?php printReservation($reservation) ?>
                         <div class="flex gap-2">
                             <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0) { ?>
@@ -100,8 +104,9 @@
 
         <?php }; ?>   
     
-
+        </div>
         
     </main>
-   
+
+
    <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>

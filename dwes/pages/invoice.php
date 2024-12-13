@@ -8,12 +8,13 @@
     include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');
 
      $extras = json_decode($reservation[0]['extras_json'],true);
+     $extrasPrice = 0;
     //  print_r($extras);
-     foreach(array_keys($extras) as $service ){
-                echo "$service <br>";
-                print_r ($extras[$service]);
-                echo '<br>';
-            };
+    //  foreach(array_keys($extras) as $service ){
+    //             echo "$service <br>";
+    //             print_r ($extras[$service]);
+    //             echo '<br>';
+    //         };
 ?>
   
 <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -66,17 +67,22 @@
 
    
     <?php  
-    // foreach(array_keys($extras) as $service){
-    //   $servicename = $service;
+    //  foreach(array_keys($extras) as $service){
+    //    $servicename = $service;
+    if($extras != null && count($extras) > 0  ){
+     
       foreach($extras as $extra) { ?>
          <!-- php print_r($extra); echo '<br>' ?> -->
           <tr class="border-t">
-            <td class="py-2 text-gray-700"><?php echo ucfirst($extra['concept']); ?> </td>
+            <td class="py-2 text-gray-700"><?php echo  ucwords(str_replace("_", " ", $extra[0]['concept'])); ?> </td>
             <td class="py-2 text-right text-gray-700">1</td>
-            <td class="py-2 text-right text-gray-700"><?php echo $extra['unitPrice'];?>€</td>
-            <td class="py-2 text-right text-gray-700"><?php echo $extra['unitPrice']; ?>€</td>
+            <td class="py-2 text-right text-gray-700"><?php echo $extra[0]['unitPrice'];?>€</td>
+            <td class="py-2 text-right text-gray-700"><?php echo $extra[0]['unitPrice']; ?>€</td>
           </tr>
-        <?php };?>  
+        <?php
+        $extrasPrice = $extrasPrice + $extra[0]['unitPrice'];   
+      };
+      };?>  
     
       </tbody>
     </table>
@@ -90,7 +96,7 @@
         </div>
         <div class="flex justify-between mt-4 border-t pt-2">
           <span class="text-xl font-bold text-gray-700">Total: </span>
-          <span class="text-xl  text-gray-700"> <?php echo  $reservation[0]['subtotal'] ?>€</span>
+          <span class="text-xl  text-gray-700"> <?php echo  ($reservation[0]['subtotal'] + $extrasPrice) ?>€</span>
         </div>
       </div>
     </section>

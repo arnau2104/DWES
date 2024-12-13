@@ -85,4 +85,4 @@ session_start();
 </header>
 
 
-<script src="./js/menu.js"></script>
+<script src="/student067/dwes/js/menu.js"></script>

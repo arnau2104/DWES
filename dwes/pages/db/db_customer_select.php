@@ -10,17 +10,24 @@
         
 
         for($i = 0; $i < count($user); $i++) {?>
-        <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700  hover:scale-110 w-96">
-            <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">Customer Information</h2> 
-            <p ><span class="font-bold">Customer ID:</span> <?php echo $user[$i]['user_id'];?></p>
-            <p><span class="font-bold">Forename: </span> <?php echo $user[$i]['forename'];?> </p> 
-            <p><span class="font-bold">Lastname: </span>  <?php echo $user[$i]['lastname'];?> </p>
-            <p><span class="font-bold"> Username: </span> <?php echo $user[$i]['username'];?> </p>
-            <p><span class="font-bold"> Password: </span> <?php echo $user[$i]['password']; ?></p>
-            <p><span class="font-bold">NIF: </span> <?php echo $user[$i]['nif']; ?> </p>
-            <p><span class="font-bold">Email: </span>  <?php echo $user[$i]['email']; ?></p>
-            <p><span class="font-bold">Phone: </span> <?php echo $user[$i]['phone']; ?> </p>
+        <div class="flex flex-col gap-2 my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96">
+            <div class="">
+                <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">Customer Information</h2> 
+                <p ><span class="font-bold">Customer ID:</span> <?php echo $user[$i]['user_id'];?></p>
+                <p><span class="font-bold">Forename: </span> <?php echo $user[$i]['forename'];?> </p> 
+                <p><span class="font-bold">Lastname: </span>  <?php echo $user[$i]['lastname'];?> </p>
+                <p><span class="font-bold"> Username: </span> <?php echo $user[$i]['username'];?> </p>
+                <p><span class="font-bold"> Password: </span> <?php echo $user[$i]['password']; ?></p>
+                <p><span class="font-bold">NIF: </span> <?php echo $user[$i]['nif']; ?> </p>
+                <p><span class="font-bold">Email: </span>  <?php echo $user[$i]['email']; ?></p>
+                <p><span class="font-bold">Phone: </span> <?php echo $user[$i]['phone']; ?> </p>
+            </div>
+            <form action="/student067/dwes/pages/forms/form_customer_update.php" method="post">
+                <input type="number" name="user_id" value= <?php echo $user[$i]['user_id'] ?> hidden>
+                <button type="submit" name="submit"  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Update Customer</button>
+            </form>
         </div>
+        
         <?php }; ?>        
     </main>
     <?php }else { ?>

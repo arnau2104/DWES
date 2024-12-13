@@ -1,8 +1,5 @@
-<?php
-   include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_place_select_byId.php');        
-?>
-
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
+<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
+include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_place_select_byId.php');   ?>
 <main class="container mx-auto py-8">
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Place ID <?php echo $place[0]['place_id'] ?> Update Form</h2>

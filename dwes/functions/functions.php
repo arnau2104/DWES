@@ -20,16 +20,17 @@ function datediff ($date_in,$date_out) {
 ?>
 <?php
 function printReservation ($reservation) { ?>
-   <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">Reservation Information</h2> 
-   <p ><span class="font-bold">Reservation ID:</span> <?php echo $reservation['reservation_id'];?></p>
-   <p><span class="font-bold">Forename: </span> <?php echo $reservation['forename'];?> </p> 
-   <p><span class="font-bold">Lastname: </span>  <?php echo $reservation['lastname'];?> </p>
-   <p><span class="font-bold"> Place Type Name: </span> <?php echo $reservation['place_type_name'];?> </p>
-   <p><span class="font-bold"> Place Category Name: </span> <?php echo $reservation['place_category_name']; ?></p>
+<!-- <h1 data-reservation="<?php// htmlspecialchars(print_r($reservation));?>" class="hidden"></h1> -->
+   <h2 data-reservation="<?php print_r($reservation);?>"  class="text-2xl font-bold text-center text-blue-600 mb-4">Reservation Information</h2> 
+   <p ><span class="font-bold">Reservation ID:</span class="reservation_content"> <span><?php echo $reservation['reservation_id'];?><span></p>
+   <p><span class="font-bold">Forename: </span> <span class="reservation_content"> <?php echo $reservation['forename'];?> </span></p> 
+   <p><span class="font-bold">Lastname: </span> <span class="reservation_content">  <?php echo $reservation['lastname'];?> </span></p>
+   <p><span class="font-bold"> Place Type Name: </span> <span class="reservation_content"> <?php echo $reservation['place_type_name'];?></span> </p>
+   <p><span class="font-bold"> Place Category Name: </span> <span class="reservation_content"> <?php echo $reservation['place_category_name']; ?> </span></p>
    <p><span class="font-bold">Place Category Price: </span> <?php echo $reservation['place_category_price']; ?> </p>
-   <p><span class="font-bold">Date In: </span> <?php echo $reservation['date_in']; ?> </p>
-   <p><span class="font-bold">Date Out: </span> <?php echo $reservation['date_out']; ?> </p>
-   <p><span class="font-bold">Reservation State: </span> <?php echo $reservation['reservation_state']; ?> </p>
+   <p><span class="font-bold">Date In: </span> <span class="reservation_content"> <?php echo $reservation['date_in']; ?> </span> </p>
+   <p><span class="font-bold">Date Out: </span> <span class="reservation_content"> <?php echo $reservation['date_out']; ?> </span></p>
+   <p><span class="font-bold">Reservation State: </span> <span class="reservation_content"> <?php echo $reservation['reservation_state']; ?> </span></p>
    <?php
    
 }
