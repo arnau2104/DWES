@@ -1,7 +1,13 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
 
     <main class="relative">
-        
+       
+    <div class="flex fixed right-0 px-2 py-1 z-20">
+    <input type="text" id="search-box" placeholder="Search..." class="border-black border rounded-lg p-2">
+    </div>
+
+    <div class="main-content">
+
         <?php 
         // if(isset($_POST['submit_update_reservation_state'])) {
         //     include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_update_reservation_state.php');
@@ -20,7 +26,7 @@
          //if the reservation_state is updated, show this message
          if(isset($_POST['submit_update_reservation_state'])) {
             include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_update_reservation_state.php');
-            echo "Update done";
+            header('Location: /student067/dwes/pages/forms/form_reservation_select.php'); //temporal, change later to db_reservation_select
         }else {
             if(empty($reservations)== true) {
                 echo '<h1> Any reservation was founded</h1>';
@@ -28,7 +34,7 @@
             
                 <div class="flex justify-center flex-wrap gap-4">
                 <?php foreach($reservations as $reservation){ ?>
-                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96">
+                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96 search-content">
                             <?php printReservation($reservation) ?>
                         <div class="flex gap-2">
                             <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0) { ?>
@@ -98,8 +104,9 @@
 
         <?php }; ?>   
     
-
+        </div>
         
     </main>
-   
+
+
    <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>

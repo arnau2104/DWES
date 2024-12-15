@@ -27,7 +27,7 @@ if(isset($_POST['submit_check_in'])) {
     //Clientes que salen hoy
     $sql = "SELECT * FROM 067_reservations_view 
     WHERE reservation_state = 'check-in' 
-    AND date_out BETWEEN '$date_in' AND '$date_out';";
+    AND date_out = CURRENT_DATE();";
 
     $result = mysqli_query($conn,$sql);
     $reservations_checkout = mysqli_fetch_all($result, MYSQLI_ASSOC);

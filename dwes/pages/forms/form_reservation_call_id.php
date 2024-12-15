@@ -3,17 +3,22 @@
 <?php
 if(isset($_SESSION['username']) && (in_array('customer',$_SESSION['rols'][0]) && (!in_array('admin',$_SESSION['rols'][0]) && !in_array('employee', $_SESSION['rols'][0])))) {
   include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');
-  include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select.php');
-  foreach($reservations as $reservation){?>
-    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-md m-4 shadow-gray-700  hover:scale-110 w-96">
-            <?php printReservation($reservation) ?>
-            <form action="/student067/dwes/pages/forms/form_reservation_update.php" method="POST">
-                <input type="number" name="reservation_id" value ="<?php echo $reservation['reservation_id']; ?>" hidden>
-                <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Update</button>
-            </form>
+  include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select.php'); ?>
+  <div class="flex flex-wrap justify-center gap-[2px]">
+  <?php foreach($reservations as $reservation){?>
+      <div class="my-4 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96">
+              <?php printReservation($reservation) ?>
+              <form action="/student067/dwes/pages/forms/form_reservation_update.php" method="POST">
+                  <input type="number" name="reservation_id" value ="<?php echo $reservation['reservation_id']; ?>" hidden>
+                  <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Update</button>
+              </form>
+      </div>
+    
+      <?php }; ?>
+
     </div>
   
-    <?php };}else { ?>
+  <?php }else { ?>
 
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Reservation Update Form</h2>
