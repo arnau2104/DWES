@@ -5,7 +5,7 @@
 <main class="container mx-auto py-8">
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Customer ID <?php echo $user[0]['user_id'] ?> Update Form</h2>
-      <form action="/student067/dwes/pages/db/db_customer_update.php" method="POST" >
+      <form action="/student067/dwes/pages/db/db_customer_update.php" method="POST">
       <input type="text"  name="user_id"  value="<?php echo $user[0]['user_id'];?>" hidden>
         <!-- <div class="flex flex-col justify-center items-center">
           <img class="w-[150px] h-[150px]" src="/student067/dwes/images/user_profile_image_default.jpg" alt="">

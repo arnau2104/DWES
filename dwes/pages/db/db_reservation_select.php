@@ -7,16 +7,7 @@
     </div>
 
     <div class="main-content">
-
-        <?php 
-        // if(isset($_POST['submit_update_reservation_state'])) {
-        //     include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_update_reservation_state.php');
-        //     echo "Update done";
-        // }
-        ?>
-        
-        
-        
+            
         <?php 
         include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php'); // include the functions file
     
@@ -27,6 +18,7 @@
          if(isset($_POST['submit_update_reservation_state'])) {
             include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_update_reservation_state.php');
             header('Location: /student067/dwes/pages/forms/form_reservation_select.php'); //temporal, change later to db_reservation_select
+            exit();
         }else {
             if(empty($reservations)== true) {
                 echo '<h1> Any reservation was founded</h1>';
@@ -45,7 +37,7 @@
                             
                                 <?php }; ?>
                             <form action="/student067/dwes/pages/forms/form_services.php" method="post">
-                                <input type="number" name="reservation_id" value= <?php echo $reservation['reservation_id'] ?> hidden>
+                                <input type="number" name="reservation_id" value=" <?php echo $reservation['reservation_id'] ?>" hidden>
                                 <button type="submit" name="submit"  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Book Services</button>
                             </form>
                         </div> 
@@ -107,6 +99,5 @@
         </div>
         
     </main>
-
 
    <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>

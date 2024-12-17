@@ -20,7 +20,6 @@ function datediff ($date_in,$date_out) {
 ?>
 <?php
 function printReservation ($reservation) { ?>
-<!-- <h1 data-reservation="<?php// htmlspecialchars(print_r($reservation));?>" class="hidden"></h1> -->
    <h2 data-reservation="<?php print_r($reservation);?>"  class="text-2xl font-bold text-center text-blue-600 mb-4">Reservation Information</h2> 
    <p ><span class="font-bold">Reservation ID:</span class="reservation_content"> <span><?php echo $reservation['reservation_id'];?><span></p>
    <p><span class="font-bold">Forename: </span> <span class="reservation_content"> <?php echo $reservation['forename'];?> </span></p> 
@@ -39,3 +38,4 @@ function printReservation ($reservation) { ?>
 
 
 
+ 
