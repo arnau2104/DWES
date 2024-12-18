@@ -9,7 +9,7 @@ if(isset($_SESSION['username']) && (in_array('customer',$_SESSION['rols'][0]) &&
     
 } else {
     $user_id = htmlspecialchars($_POST['user_id']);
-    $sql = "select * from 067_users where user_id = '$user_id' AND status=1 AND rols = 'customer'";
+    $sql = "select * from 067_users where user_id = '$user_id' AND status=1 ";
 }
     //make query and get result
 

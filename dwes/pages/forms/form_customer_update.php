@@ -5,12 +5,17 @@
 <main class="container mx-auto py-8">
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Customer ID <?php echo $user[0]['user_id'] ?> Update Form</h2>
-      <form action="/student067/dwes/pages/db/db_customer_update.php" method="POST">
+      <form action="/student067/dwes/pages/db/db_customer_update.php" method="POST" enctype="multipart/form-data">
       <input type="text"  name="user_id"  value="<?php echo $user[0]['user_id'];?>" hidden>
-        <!-- <div class="flex flex-col justify-center items-center">
-          <img class="w-[150px] h-[150px]" src="/student067/dwes/images/user_profile_image_default.jpg" alt="">
-          <input type="file" name="user_image">
-        </div> -->
+        <div class="flex flex-col justify-center items-center">
+          <?php if(!empty($user[0]['user_image_path'])){ ?>
+          <img class="w-[150px] h-[150px] rounded-lg mb-2" src=" <?php echo $user[0]['user_image_path']; ?>" alt="">
+          <?php }else {?>
+            <img class="w-[150px] h-[150px]" src="/student067/dwes/images/user_profile_image_default.jpg" alt="">
+            <?php }; ?>
+          <input type="file" name="user_image_path" class="mb-2">
+          <input type="text" name="db_user_image_path" value="<?php if(!empty($user[0]['user_image_path'])){ echo  $user[0]['user_image_path']; }; ?>" hidden>
+        </div>
       <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Forename</label>
           <input type="text"  name="forename" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Your forename" value="<?php echo $user[0]['forename'];?>">
