@@ -37,7 +37,7 @@
                             
                                 <?php }; ?>
                             <form action="/student067/dwes/pages/forms/form_services.php" method="post">
-                                <input type="number" name="reservation_id" value=" <?php echo $reservation['reservation_id'] ?>" hidden>
+                                <input type="text" name="reservation_id" value=" <?php echo $reservation['reservation_id'] ?>" hidden >
                                 <button type="submit" name="submit"  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Book Services</button>
                             </form>
                         </div> 

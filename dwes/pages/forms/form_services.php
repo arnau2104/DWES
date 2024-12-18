@@ -74,7 +74,7 @@
                     </div>
                 </div>
             
-                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" hidden>
+                <input type="text" name="reservation_id" value ="<?php echo $reservation_id; ?> " hidden>
                 <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" hidden >
                 <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" hidden>
                 <input type="text" name="service" value="spa" hidden>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
 
-                <input type="number" name="reservation_id" value ="<?php echo $reservation_id; ?>" hidden>
+                <input type="text" name="reservation_id" value ="<?php echo $reservation_id; ?>" hidden>
                 <input type="datetime-local" name="dateTime_in" class="dateTime_in" value="" hidden>
                 <input type="datetime-local" name="dateTime_out" class="dateTime_out" value="" hidden>
                 <input type="text" name="service" value="horse_excursion" hidden>
@@ -157,10 +157,16 @@
         $dateTime_out = $_POST['dateTime_out'];
         $unit_price = $_POST["unit_price"];
         $reservation_id = $_POST['reservation_id'];
+        
             include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId2.php');
 
+            if (isset($reservation[0])) {
+                $extras = json_decode($reservation[0]['extras_json'], true);
+            } else {
+                $extras = [];
+            }
         // Crear el JSON para extras_json
-        $extras= json_decode($reservation[0]['extras_json'],true); 
+        // $extras= json_decode($reservation[0]['extras_json'],true); 
         // print_r($extras);
        
 
@@ -185,12 +191,16 @@
        
         $extras_json = json_encode($extras);
 
-        $sql = "UPDATE 067_reservations SET extras_json = '$extras_json' WHERE reservation_id = $reservation_id;";
+       if (!empty($reservation_id) ) {
+    $sql = "UPDATE 067_reservations SET extras_json = '$extras_json' WHERE reservation_id = $reservation_id;";
+    $result = mysqli_query($conn, $sql);
 
-            $result = mysqli_query($conn, $sql);
+    } else {
+    echo "Error: ID de reserva no válido.";
+    }
             
             
-            $sql2 = "SELECT * FROM 067_reservations WHERE reservation_id = 1;";
+            $sql2 = "SELECT * FROM 067_reservations WHERE reservation_id = $reservation_id;";
             $result2 = mysqli_query($conn, $sql2);
             $reservation2 = mysqli_fetch_assoc($result2);
             
@@ -219,6 +229,6 @@
       
     </main>
 
-    <script src="/student067/dwes/js/extras.js"></script>
+    <!-- <script src="/student067/dwes/js/extras.js"></script> -->
    <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>
 

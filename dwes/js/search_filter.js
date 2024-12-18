@@ -6,24 +6,26 @@ let searchButton = document.querySelector(".search-button");
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
-    searchBox.addEventListener('input', (e)=> {
-        let searchtext = searchBox.value.toLowerCase();
-        console.log(searchtext);
+    if(searchBox){
+        searchBox.addEventListener('input', (e)=> {
+            let searchtext = searchBox.value.toLowerCase();
+            console.log(searchtext);
 
-        mainContent.forEach((item, index) =>{
-        
-            // console.log(item.textContent.toLowerCase(), searchtext, item.textContent.toLowerCase().includes(searchtext));
-
-            if(item.dataset.reservation.toLowerCase().includes(searchtext)) {
-                item.parentElement.classList.add("visible");
-                item.parentElement.classList.remove("hidden");
+            mainContent.forEach((item, index) =>{
             
-            }else{
-                item.parentElement.classList.remove("visible");
-                item.parentElement.classList.add("hidden");
-            
-            }
+                // console.log(item.textContent.toLowerCase(), searchtext, item.textContent.toLowerCase().includes(searchtext));
 
-        });
-    })
+                if(item.dataset.reservation.toLowerCase().includes(searchtext)) {
+                    item.parentElement.classList.add("visible");
+                    item.parentElement.classList.remove("hidden");
+                
+                }else{
+                    item.parentElement.classList.remove("visible");
+                    item.parentElement.classList.add("hidden");
+                
+                }
+
+            });
+        })
+    }
 })
