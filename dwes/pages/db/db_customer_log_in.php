@@ -21,6 +21,7 @@
      if(empty($user) == false) {
 
        $_SESSION['username'] = $user['username'];
+       $_SESSION['user_image_path'] = $user['user_image_path'] ? $_SERVER['DOCUMENT_ROOT'].'/student067/dwes/images/users/user_profile_image_default.jpg';
       asingSessionRols($user);
       header('Location: /student067/dwes/index.php');           
     

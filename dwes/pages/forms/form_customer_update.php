@@ -11,7 +11,7 @@
           <?php if(!empty($user[0]['user_image_path'])){ ?>
           <img class="w-[150px] h-[150px] rounded-lg mb-2" src=" <?php echo $user[0]['user_image_path']; ?>" alt="">
           <?php }else {?>
-            <img class="w-[150px] h-[150px]" src="/student067/dwes/images/user_profile_image_default.jpg" alt="">
+            <img class="w-[150px] h-[150px]" src="/student067/dwes/images/users/user_profile_image_default.jpg" alt="">
             <?php }; ?>
           <input type="file" name="user_image_path" class="mb-2">
           <input type="text" name="db_user_image_path" value="<?php if(!empty($user[0]['user_image_path'])){ echo  $user[0]['user_image_path']; }; ?>" hidden>

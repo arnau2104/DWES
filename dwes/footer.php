@@ -32,7 +32,7 @@
     © 2024 MiEmpresa. Todos los derechos reservados.
   </div>
 </footer>
-<!-- <script src="./js/menu_header.js"></script> -->
+  <script src="./js/menu_header.js"></script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/student067/dwes/js/search_filter.js"></script>
