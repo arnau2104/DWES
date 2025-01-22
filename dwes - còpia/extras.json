@@ -1,0 +1,37 @@
+[
+
+    {"spa" : [
+        {"concept" : "massage",
+        "ticket_number": "1234",        
+        "dateTime_in" : "2024-11-20 18:00:00",
+        "dateTime_out" : "2024-11-20 19:00:00",
+        "quantity" : 2 ,
+        "unit_price": 25}
+    ]},
+
+    {"spa" : [
+        {"concept" : "large_massage"},
+        {"ticket_number": "1234"},        
+        {"dateTime_in" : "2024-11-20 18:00:00"},
+        {"dateTime_out" : "2024-11-20 19:30:00"},
+        {"quantity" : 2 },
+        {"unit_price": 25}
+    ]}, 
+
+    {"restaurant" : [
+        {"concept" : "dinner"},
+        {"ticket_number" : "78996"},
+        {"dateTime_in" : "2024-11-20 20:00:00"},
+        {"dateTime_out" : "2024-11-20 21:18:37"},
+        {"quantity" : 1},  //si es un menu con el precio cerrado se pondrea el numero de comensales, si es cena libre se pone 1
+        {"unit_price" : 76}
+    ]
+
+    }
+  
+
+]
+
+
+
+

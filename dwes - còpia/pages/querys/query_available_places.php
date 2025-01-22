@@ -1,9 +1,14 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php');
+       include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
+
 
 // write query
-    $date_in = $_POST['date_in'];
-    $date_out = $_POST['date_out'];
+    $date_in = htmlspecialchars($_POST['date_in']);
+    $date_out = htmlspecialchars($_POST['date_out']);
+
+
+   setCookie("date_in" , $date_in, time() + 86400, "/");
+   setCookie("date_out" , $date_out, time() + 86400, "/");
 
     $available_places = "SELECT * 
                         FROM 067_places_view
@@ -16,5 +21,5 @@
      
      $result = mysqli_query($conn,  $available_places); 
     $place = mysqli_fetch_all($result, MYSQLI_ASSOC);  
-    //$customer = mysqli_fetch_assoc($result); cuando solo hay un valor  
+    //user = mysqli_fetch_assoc($result); cuando solo hay un valor  
     ?> 

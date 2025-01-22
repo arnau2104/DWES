@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Installatio Manual</title>
 </head>
-<body>
-    <h1>Installation Manual</h1>
+
+<body class="bg-gray-100 text-gray-900 ">
+
+    <div class="container mx-auto p-5 text-center">
+        <h1 class="text-3xl text-gray-800 font-bold mb-4">Configuració de l'Entorn Local amb XAMPP</h1>
+
+        <h2 class="text-2xl font-semibold mb-3">Crear el Projecte en XAMPP</h2>
+        
+        <p>Crea un directori per al projecte en la carpeta  C:\xampp\htdocs. En aquest cas, es crea “student067”.</p>
+
+        
+        <h2 class="text-2xl font-semibold mb-3">Instal·lar Tailwind CSS amb CDN :</h2>
+        <p>Per evitar la configuració de Tailwind amb <code>npm</code>, podem instal·lar-lo de manera més senzilla utilitzant el CDN.</p>
+        <p>1. Obre el fitxer <code>index.html</code> (o qualsevol fitxer HTML que estiguis utilitzant per al teu projecte).</p>
+        <p>2. Afegeix el següent en l’etiqueta <code>&lt;head&gt;</code> del teu arxiu HTML per carregar Tailwind CSS a través del CDN:</p>
+        <pre class="bg-gray-800 text-white p-4 mt-2 rounded-md"><code>&lt;link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.24/dist/tailwind.min.css" rel="stylesheet"&gt;</code></pre>
+        <p class="mt-2">Aquesta línia carregarà l’última versió de Tailwind CSS directament des del CDN. No cal cap configuració addicional per instal·lar Tailwind ni compilar els fitxers CSS.</p>
+
+        <h2 class="text-2xl font-semibold mb-3">Iniciar el Projecte</h2>
+        <p>Per iniciar el projecte en local hem d0iniciar primer el servidor xampp</p>
+        <p>Obre el navegador i accedeix a: <a href="http://localhost/student067/" class="text-blue-500">http://localhost/student067/</a></p>
+        <p>Tambe el pots veure a <a href="https://remotehost.es/student067/dwes/" class="text-blue-500">https://remotehost.es/student067/dwes/</a></p>
+
+        <h2 class="text-2xl font-semibold mb-3">Pujar Arxius al Servidor </h2>
+        <p>Per pujar archius al servidor utilitzarem la aplicacio de FileZilla</p>
+        <p class="mt-3">1. <strong>Configurar FileZilla:</strong></p>
+        <ul class="list-disc pl-5">
+            <li>Obre FileZilla i ompleix els següents camps:</li>
+            <li>
+                <ul class="list-inside list-none">
+                    <li><strong>Host:</strong> Direcció del servidor.</li>
+                    <li><strong>Protocol:</strong> FTP.</li>
+                    <li><strong>Tipus d’accés:</strong> Normal.</li>
+                    <li><strong>Usuari:</strong> El teu nom d’usuari FTP.</li>
+                    <li><strong>Contrasenya:</strong> La teva contrasenya FTP.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>2. <strong>Transferencia de Fitxers Arxius:</strong></p>
+       <p>Una vegada establerta a la connexio arrastra els fitxers que vols oujar el servidor i ja ho tindriem!</p>
+
+    </div>
+
 </body>
 </html>

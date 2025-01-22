@@ -23,7 +23,8 @@
                     <form action="/student067/dwes/pages/db/db_reservation_insert.php" method="POST">
                         <input type="number" name="place_id" id="place_id_input" value ="<?php echo $place[$i]['place_id']?>" hidden>
                         <input type="date" name="date_in" value="<?php echo htmlspecialchars($_POST['date_in'])?>" hidden>
-                        <input type="date" name="date_out" value="<?php echo htmlspecialchars($_POST['date_out'])?>" hidden>                        <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Submit</button>   
+                        <input type="date" name="date_out" value="<?php echo htmlspecialchars($_POST['date_out'])?>" hidden>                        
+                        <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Submit</button>   
                     </form>  
                 </div>  
             </div>

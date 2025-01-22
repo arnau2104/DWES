@@ -7,8 +7,8 @@
     $date_out = htmlspecialchars($_POST['date_out']);
 
 
-   setCookie('date_in' , $date_in, time() + 86400, "/student067/dwes");
-   setCookie('date_out' , $date_out, time() + 86400, "/student067/dwes");
+   setCookie("date_in" , $date_in, time() + 86400, "/");
+   setCookie("date_out" , $date_out, time() + 86400, "/");
 
     $available_places = "SELECT * 
                         FROM 067_places_view

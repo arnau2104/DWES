@@ -1,0 +1,49 @@
+
+ 
+ 
+ /* Ocultar submenús inicialmente */
+ nav ul li ul {
+    display: none;
+}
+
+/* Mostrar submenús al pasar el cursor */
+nav ul li:hover > ul {
+    display: block;
+}
+
+/* Estilos adicionales */
+nav ul li {
+    position: relative;
+}
+
+nav ul li ul {
+    display: none; /* Ocultar inicialmente */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1e40af;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li ul.hidden {
+    display: none;
+}
+
+nav ul li ul:not(.hidden) {
+    display: block; /* Mostrar cuando la clase hidden se quita */
+    
+}
+
+nav ul li ul li {
+    margin: 0;
+}
+
+nav ul li ul li a {
+    display: block;
+   
+    padding: 0.5rem 1rem;
+}
+
+

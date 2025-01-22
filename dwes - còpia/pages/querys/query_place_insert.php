@@ -1,11 +1,12 @@
 <?php
  
- include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_local_connection.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
+
 
  // write query
- $place_type_id = $_POST["place_type_id"];
- $place_category_id = $_POST["place_category_id"];
- $place_capacity = $_POST["place_capacity"];
+ $place_type_id = htmlspecialchars($_POST["place_type_id"]);
+ $place_category_id = htmlspecialchars($_POST["place_category_id"]);
+ $place_capacity = htmlspecialchars($_POST["place_capacity"]);
 
 
  

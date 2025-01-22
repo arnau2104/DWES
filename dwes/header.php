@@ -1,7 +1,7 @@
 <?php
 session_start();
 // print_r($_SESSION['rols']);
-print_r($_SESSION['user_image_path']);
+// print_r($_SESSION['user_image_path']);
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,8 @@ print_r($_SESSION['user_image_path']);
     <?php } else { ?>
       <div class="flex flex-col items-center p-4 rounded-lg hover:bg-blue-700">
         <!-- <p class="text-white">Hola <?php //echo $_SESSION['username'];?></p> -->
-         <!-- <img src="<?php echo $_SESSION['user_image_path']; ?>" class="w-[50px] h-[50px] rounded-[50%] cursor-pointer mb-2" id="profile_photo"> -->
+         <img src="<?php echo $_SESSION['user_image_path']; ?>" class="w-[50px] h-[50px] rounded-[50%] cursor-pointer mb-2" id="profile_photo">
+         <p class="text-white hover:text-gray-300 hidden username"><?php echo $_SESSION['username']?></p>
         <a href="/student067/dwes/pages/db/db_customer_log_out.php"><button class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200 hidden log_out" >Log Out</button></a>
       </div>
     <?php } ?>

@@ -11,7 +11,7 @@
         <div class="text-center">
         <button name="disable" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-1">Disable</button>
         </div>
-        <div class="text-center">
+        <div class="text-center mt-2">
           <button type="submit" name="delete" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Delete</button>
         </div>
       </form>

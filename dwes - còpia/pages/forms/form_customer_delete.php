@@ -1,6 +1,17 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
   <!-- Formulario -->
   <main class="container mx-auto py-8">
+  <?php if(isset($_SESSION['username']) && (in_array('customer',$_SESSION['rols'][0]) && (!in_array('admin',$_SESSION['rols'][0]) && !in_array('employee', $_SESSION['rols'][0])))) { ?>
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-center text-red-500">Are you sure do you want delete this customer?</h2>
+      <form action="/student067/dwes/pages/db/db_customer_delete.php" method="POST">
+        <div class="text-center">
+          <button type="submit" name="submit" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Delete Customer</button>
+        </div>
+      </form>
+    </div>
+  <?php } else { ?>
+
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Customer Delete Form</h2>
       <form action="/student067/dwes/pages/db/db_customer_delete.php" method="POST">
@@ -14,5 +25,6 @@
         </div>
       </form>
     </div>
+    <?php } ?>
   </main>
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>
