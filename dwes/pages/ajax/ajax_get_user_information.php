@@ -11,7 +11,7 @@
 
        // // get the q parameter from URL
 
-$hint = "";
+$hint = "holaa";
 
 if($q !== "") {
 
