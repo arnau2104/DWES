@@ -11,21 +11,7 @@
     <?php };?>
 
     <?php 
-    // $reservation_id = http_build_query(1);
-
-    // $options = [
-    //     'http' => [
-    //         'method' => 'POST', //Especificamos que es una solicitud POST
-    //         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",  // Tipo de contenido
-    //         'content' => $reservation_id,  // Los datos a enviar
-    //     ]
-    // ];
-
-    // curl_init();
-
-    
      include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_select_byId.php');
-//    print_r(json_decode($reservation[0]['extras_json']));
     ?>
 
     
@@ -213,15 +199,6 @@
     }
     
     ?>
-
-    <!-- <aside class="float-right bg-rose-500 h-full absolute top-20 right-0">
-        <h1>Serices Bookeds unitl Now:</h1>
-
-         <ul>
-           
-        </ul> 
-
-    </aside> -->
 
 
 
