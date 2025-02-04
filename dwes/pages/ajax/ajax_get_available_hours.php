@@ -8,28 +8,31 @@
        $sql = "SELECT * FROM 067_service_availability_view WHERE service_id = '$serviceId' AND rs_date = '$rsDate' AND available_capacity < $qty";
 
        $result = mysqli_query($conn, $sql);
-       $notAvailableHours = mysqli_fetch_all($result, MYSQLI_ASSOC)
+       $notAvailableHours = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
        $sql2 = "SELECT * FROM 067_services WHERE service_id = '$serviceId'";
 
-       $result2 = mysqli_query($conn, $sql);
-       $serviceHours = mysqli_fetch_all($result, MYSQLI_ASSOC);
+       $result2 = mysqli_query($conn, $sql2);
+       $service = mysqli_fetch_assoc($result2); 
+       $serviceHours = json_decode($service['schedule_json'], true);
+     
 
-       foreach ($serviceHours as $serviceHour) {
+    foreach ($serviceHours as $serviceHour) {
         $available = true;
-        if($notAvailableHours) {
-            foreach($serviceHour as $notAvailableHour) {
-                if(in_array($serviceHour, $notAvailableHour['rs_time'])) {
-                    $available = false;
-                }
+    
+       
+        foreach ($notAvailableHours as $notAvailableHour) {
+            if ($serviceHour == $notAvailableHour['rs_time']) {
+                $available = false;
+                break;
             }
         }
-
-            if($available == true) { ?>
-                <option value="<?php echo $serviceHour ?>"><?php echo $serviceHour ?></option>
-          <?php  } 
-       }
+    
        
+        if ($available) { 
+            echo "<option value='$serviceHour'>$serviceHour</option>";
+        }
+    }
        
 
 

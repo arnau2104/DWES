@@ -53,7 +53,7 @@
         let rsDate = document.form_service_reservation.rs_date.value;
         let qty = document.form_service_reservation.qty.value;
 
-        dataToSend = `serviceId=${serviceId}&&rsDate=${rsDate},&&qty=${qty}`;
+        dataToSend = `serviceId=${serviceId}&rsDate=${rsDate}&qty=${qty}`;
 
         const xhttp = new XMLHttpRequest();
             xhttp.onload = function () {  
