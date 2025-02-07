@@ -90,9 +90,13 @@ function writeLogFile($file, $text) {
 
    fclose($handle);
 }
-?>
- 
 
+
+function printWeather($wheather) {
+   
+}
+ 
+?>
 
 
  
