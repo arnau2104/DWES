@@ -12,6 +12,7 @@ session_start();
     <title>Hotel Managment System</title> 
     <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" href="/student067/dwes/css/style.css">
+      <link rel="stylesheet" href="/student067/dwes/css/weather-icons-master/css/weather-icons.css">
    
 
 </head>

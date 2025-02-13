@@ -92,9 +92,56 @@ function writeLogFile($file, $text) {
 }
 
 
-function printWeather($wheather) {
-   
-}
+function printWeather($wheather, $onlyShowToday,$showAlldays) { 
+   $date = new DateTime();
+   $date = date_timestamp_set($date,$wheather[0]["EpochTime"]);
+   $date = date_format($date, 'Y-m-d'); 
+   $icon = "";
+   if($wheather[0]["WeatherIcon"] <=4 && $wheather[0]["WeatherIcon"] >= 1 ) {
+      $icon = "wi-day-sunny";
+   }else if($wheather[0]["WeatherIcon"] == 5) {
+      $icon = "wi-day-cloudy";
+   }elseif (($wheather[0]["WeatherIcon"] >=6 && $wheather[0]["WeatherIcon"] <=11) || $wheather[0]["WeatherIcon"] >= 20 && $wheather[0]["WeatherIcon"] <=26 || $wheather[0]["WeatherIcon"] == 32 )   {
+      $icon = "wwi-cloudy";
+   }elseif ($wheather[0]["WeatherIcon"] >= 12 && $wheather[0]["WeatherIcon"] <=17) {
+      $icon = "wi-day-rain-mix";
+   }elseif($wheather[0]["WeatherIcon"] == 18 || $wheather[0]["WeatherIcon"] == 29 ){
+      $icon = "wi-rain";
+   }elseif($wheather[0]["WeatherIcon"] >= 33 && $wheather[0]["WeatherIcon"] <= 38) {
+      $icon = "wi-night-alt-cloudy";
+   }elseif ($wheather[0]["WeatherIcon"] >= 39 && $wheather[0]["WeatherIcon"] <= 44) {
+      $icon = "wi-night-alt-slee";
+   }else {
+      $icon = "";
+   }
+
+   $today = new DateTime();
+   $today = date_format($today, "Y-m-d");
+
+   if($onlyShowToday && $date == $today){?>
+   <div class="  max-w-md  bg-white shadow-lg rounded-lg overflow-hidden">
+         <div class="px-6 py-4">
+               <h1 class="text-xl font-semibold text-gray-800">Date: <?php echo $date; ?></h1>
+               <div class="flex items-center mt-4">
+                  <i class="wi <?php echo $icon;?> text-4xl text-blue-500 ml-2"></i>
+               </div>
+               <h1 class="text-lg text-gray-600 mt-2"><span class="font-bold">Temperature:</span> <?php echo $wheather[0]["Temperature"]["Metric"]["Value"] . $wheather[0]["Temperature"]["Metric"]["Unit"];?></h1>
+               <h1 class="text-lg text-gray-600 mt-2"><span class="font-bold">Precipitations:</span> <?php echo $wheather[0]["PrecipitationType"] ?? " no rain expected" ;?> </h1>
+         </div>
+   </div> 
+<?php }elseif(!$onlyShowToday && $showAlldays) { ?>
+   <div class="  max-w-md  bg-white shadow-lg rounded-lg overflow-hidden">
+         <div class="px-6 py-4">
+               <h1 class="text-xl font-semibold text-gray-800">Date: <?php echo $date; ?></h1>
+               <div class="flex items-center mt-4">
+                  <i class="wi <?php echo $icon;?> text-4xl text-blue-500 ml-2"></i>
+               </div>
+               <h1 class="text-lg text-gray-600 mt-2"><span class="font-bold">Temperature:</span> <?php echo $wheather[0]["Temperature"]["Metric"]["Value"] . $wheather[0]["Temperature"]["Metric"]["Unit"];?></h1>
+               <h1 class="text-lg text-gray-600 mt-2"><span class="font-bold">Precipitations:</span> <?php echo $wheather[0]["PrecipitationType"] ?? " no rain expected" ;?> </h1>
+         </div>
+   </div> 
+<?php }
+ }
  
 ?>
 
