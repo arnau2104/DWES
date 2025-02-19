@@ -7,7 +7,7 @@
 
 
 <?php if($weathers){?>
-    <div class="flex gap-2 p-2 m-4  max-w-lg rounded-lg">
+    <div class="flex gap-2 p-2 m-4   rounded-lg">
         <?php foreach($weathers as $weather) { 
             $decodedWeather = json_decode($weather['doc_json'], true);
         

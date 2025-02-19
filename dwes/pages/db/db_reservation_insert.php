@@ -33,15 +33,21 @@ include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservat
         </div>
     </div>
    <form action="/student067/dwes/pages/mail.php" method="POST" id="email-form">
-    <input type="text" value="<?php echo $reservation['$reservation_id']?>" hidden>
+        <input type="hidden" name="reservation_id"id="reservation_id_email" value="<?php echo $reservation['reservation_id'];?>" >
     </form>
    <?php }; ?>
 </main>
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>
 
 <script>
-   window.onload = function() {
-        document.getElementById("email-form").submit();
-    };
+   document.addEventListener("DOMContentLoaded",()=> {
+    if(document.getElementById("reservation_id_email").value){
+    document.getElementById("email-form").submit();
+    console.log("email sended")
+    }else {
+        console.log("no reservation id for the email")
+    }
+   }) 
+    
 
  </script>   

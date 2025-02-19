@@ -1,6 +1,6 @@
 <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
     <main>
-        <div class="float-right">
+        <div class="float-right max-w-2xl">
           <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/067_accu_weather_panel.php'); ?>
         </div>
         <div class="flex flex-col items-center">

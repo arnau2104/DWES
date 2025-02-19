@@ -29,9 +29,9 @@
 
  
   <?php
-if (!$_SERVER['SCRIPT_NAME'] == "/student067/dwes/pages/reservas.php") {
-  include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');
-}?>
+    if ($_SERVER['SCRIPT_NAME'] != "/student067/dwes/index.php") {
+      include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');
+  }?>
  
 
  <script>
