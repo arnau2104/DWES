@@ -1,4 +1,21 @@
-<?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
+<?php 
+
+if(isset($_COOKIE['usser_logged'])) { 
+  include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/functions/functions.php');?>
+
+<script>
+  let cookie = decodeURIComponent(getCookieJS('usser_logged'));
+  let cookieDecoded = JSON.parse(cookie);
+  console.log(cookie);
+  console.log(JSON.parse(cookie));
+ document.log_in_form.username.value = cookie[0];
+ document.log_in_form.password.value = cookie[1];
+ document.log_in_form.submit();
+</script>
+
+<?php }
+
+include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
   <!-- Formulario -->
   <main class="container mx-auto py-8">
     <?php if(isset($_SESSION['log_in_message'])) { ?>
@@ -6,7 +23,7 @@
    <?php } ?>
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Log In</h2>
-      <form action="/student067/dwes/pages/db/db_customer_log_in.php" method="POST">
+      <form action="/student067/dwes/pages/db/db_customer_log_in.php" method="POST" name="log_in_form">
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Username</label>
           <input type="text"  name="username" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your username here" >
@@ -20,7 +37,7 @@
           <button type="submit" name="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Log in</button>
         </div>
         <div class="text-center">
-          <p>Don't hav an account? <a href="/student067/dwes/pages/forms/form_customer_insert.php" class="text-green-500">Register here!</a></p>
+          <p>Don't have an account? <a href="/student067/dwes/pages/forms/form_customer_insert.php" class="text-green-500">Register here!</a></p>
         </div>
       </form>
     </div>

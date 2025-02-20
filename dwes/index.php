@@ -1,6 +1,14 @@
-<?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
+<?php 
+if(isset($_COOKIE['067_user_logged'])) {?>
+
+<script>
+  window.location.href = '/student067dwes/pages/forms/form_customer_log_in.php';
+</script>
+<?php }
+
+include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
     <main>
-        <div class="float-right max-w-2xl">
+        <div class="float-right max-w-3xl">
           <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/067_accu_weather_panel.php'); ?>
         </div>
         <div class="flex flex-col items-center">
