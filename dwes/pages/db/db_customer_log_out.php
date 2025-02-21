@@ -16,6 +16,7 @@
  unset($_SESSION['username']);
  unset($_SESSION['rols']);
 unset($_SESSION['user_image_path']); 
+setcookie('067_user_logged', '', time() - 3600, '/student067/dwes');
 
 ?>
 <script>

@@ -35,7 +35,7 @@
 
       if(!isset($_COOKIE['usser_logged'])) {
          $userCookie = [$user['username'],$user['password']];
-         setcookie('usser_logged',json_encode($userCookie),time() + 604800,'/student067/dwes');
+         setcookie('067_user_logged',json_encode($userCookie),time() + 604800,'/student067/dwes');
       }
 
       header('Location: /student067/dwes/index.php');           

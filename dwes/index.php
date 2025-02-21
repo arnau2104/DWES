@@ -1,12 +1,14 @@
 <?php 
-if(isset($_COOKIE['067_user_logged'])) {?>
 
-<script>
-  window.location.href = '/student067dwes/pages/forms/form_customer_log_in.php';
-</script>
-<?php }
 
-include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
+include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
+if(!empty($_COOKIE['067_user_logged']) && empty($_SESSION['username'])) {?>
+    <script>
+      console.log("redirecting...");
+      window.location.href = '/student067/dwes/pages/forms/form_customer_log_in.php';
+      
+    </script>
+  <?php }?>
     <main>
         <div class="float-right max-w-3xl">
           <?php include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/067_accu_weather_panel.php'); ?>

@@ -114,11 +114,11 @@ if (!empty($reservation) && is_array($reservation)) {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output  //0 debug desactivado 2 activado
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.remotehost.es';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Host       = 'smtp.remotehost.es';                     //Direccion del servidor SMTP
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication, Necesario para poder enviar correos a gmail, ya que la requierien
         $mail->Username   = 'no-reply@remotehost.es';                     //SMTP username
         $mail->Password   = 'Test1234.';                               //SMTP password
-        $mail->SMTPSecure = 'ssl'; //verificar si dominio te protocolo ssl sino poner tls           //Enable implicit TLS encryption 
+        $mail->SMTPSecure = 'ssl';                                  //Verificar si dominio te protocolo ssl sino poner tls           
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
@@ -133,7 +133,7 @@ if (!empty($reservation) && is_array($reservation)) {
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Asunto test'; //asunto de email
+        $mail->Subject = "Reservation in Arnau's Hotel"; //asunto de email
         $mail->Body    = $cuerpo; //contenido del correo
         
 
