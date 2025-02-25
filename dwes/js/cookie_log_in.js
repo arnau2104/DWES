@@ -26,8 +26,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById("username").value =cookieDecoded[0];
     document.log_in_form.password.value = cookieDecoded[1];
     
-     if( document.getElementById("username") && document.log_in_form.password.value) {
-    document.log_in_form.submit.click();
+     if( cookieDecoded[0] && cookieDecoded[1]) {
+        console.log("dins click")
+        document.log_in_form.submit.click();
+     }else {
+        console.log("defora click")
      }
 })
 

@@ -2,7 +2,10 @@
 include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
 
 if(isset($_COOKIE['067_user_logged']) && empty($_SESSION['username'])) {  ?>
-<script>src="/student067/dwes/js/cookie_log_in.js"</script>
+<script>src="/student067/dwes/js/cookie_log_in.js" </script>
+<script>
+  console.log("log in redirect");
+</script>
 
 <?php }?>
   <!-- Formulario -->

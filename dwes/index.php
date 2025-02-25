@@ -1,11 +1,12 @@
 <?php 
-
+  $referer = $_SERVER['HTTP_REFERER'] ?? 'fuera';
+  
 
 include_once ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
-if(!empty($_COOKIE['067_user_logged']) && empty($_SESSION['username'])) {?>
+if(isset($_COOKIE['067_user_logged']) && !isset($_SESSION['username']) && $referer == 'fuera') {?>
     <script>
       console.log("redirecting...");
-      window.location.href = '/student067/dwes/pages/forms/form_customer_log_in.php';
+       window.location.href = '/student067/dwes/pages/forms/form_customer_log_in.php';
       
     </script>
   <?php }?>
