@@ -1,5 +1,49 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');?>
 
+<style>
+    .form-estrellas {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.form-estrellas p {
+  text-align: center;
+
+}
+
+.form-estrellas label {
+  font-size: 30px;
+}
+
+.form-estrellas input[type="radio"] {
+  display: none;
+}
+
+.form-estrellas label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.form-estrellas label:hover,
+.form-estrellas label:hover ~ label {
+  color: orange;
+}
+
+.form-estrellas input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.form-estrellas input[type="radio"]:hover {
+    cursor:pointer;
+}
+
+</style>
+
     <main class="relative">
        
     <div class="flex fixed right-0 px-2 py-1 z-20">
@@ -24,9 +68,9 @@
                 echo '<h1> Any reservation was founded</h1>';
             }elseif($reservations && (!isset($_POST['submit_check_in']))) { ?>
             
-                <div class="flex justify-center flex-wrap gap-4">
+                <div class="flex justify-center flex-wrap gap-4 ">
                 <?php foreach($reservations as $reservation){ ?>
-                    <div class="my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96 search-content">
+                    <div class="flexmy-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96 search-content">
                             <?php printReservation($reservation) ?>
                         <div class="flex gap-2">
                             <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0) { ?>
@@ -41,8 +85,38 @@
                                         <input type="text" name="reservation_id" value=" <?php echo $reservation['reservation_id'] ?>" hidden >
                                         <button type="submit" name="submit"  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 mt-2">Book Services</button>
                                     </form>
-                            <?php }; ?>
+                            <?php }; ?>  
                         </div> 
+                        <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0){?>
+                                <div class="flex flex-col mt-2 items-center">
+                            
+                                    <button class=" bg-[#FBBF24] px-4 py-2 rounded-lg hover:bg-[#F59E0B] transition-colors duration-200 mt-2 p-2">Add Review</button>
+                                    <form class="form-estrellas">
+                                        <p class="clasificacion">
+                                            <input id="radio5_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="5">
+                                            <label for="radio5_<?php echo $reservation['reservation_id']; ?>">★</label>
+
+                                            <input id="radio4_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="4">
+                                            <label for="radio4_<?php echo $reservation['reservation_id']; ?>">★</label>
+
+                                            <input id="radio3_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="3">
+                                            <label for="radio3_<?php echo $reservation['reservation_id']; ?>">★</label>
+
+                                            <input id="radio2_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="2">
+                                            <label for="radio2_<?php echo $reservation['reservation_id']; ?>">★</label>
+
+                                            <input id="radio1_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="1">
+                                            <label for="radio1_<?php echo $reservation['reservation_id']; ?>">★</label>
+                                        </p>
+                                    </form>
+
+                                    <textarea class="w-full p-4 rounded-md border" name="reservation_review" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
+
+                                    <button class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
+
+                            
+                        </div>
+                        <?php }?>
                     </div>
                
         <?php } ?>
@@ -103,3 +177,10 @@
     </main>
 
    <?php include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/footer.php');?>
+
+<script>
+   function autoResize(textarea) {
+    textarea.style.height = 'auto'; // Restablece la altura para evitar acumulación
+    textarea.style.height = textarea.scrollHeight + 'px'; // Ajusta la altura según el contenido
+}
+</script>

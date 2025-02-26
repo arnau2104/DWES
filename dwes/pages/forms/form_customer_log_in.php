@@ -1,13 +1,7 @@
 <?php 
 include ($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/header.php');
-
-if(isset($_COOKIE['067_user_logged']) && empty($_SESSION['username'])) {  ?>
-<script>src="/student067/dwes/js/cookie_log_in.js" </script>
-<script>
-  console.log("log in redirect");
-</script>
-
-<?php }?>
+$user_logged_cokie = isset($_COOKIE['067_user_logged']) ? json_decode($_COOKIE['067_user_logged']) : ['','']; 
+?>
   <!-- Formulario -->
   <main class="container mx-auto py-8">
     <?php if(isset($_SESSION['log_in_message'])) { ?>
@@ -18,11 +12,11 @@ if(isset($_COOKIE['067_user_logged']) && empty($_SESSION['username'])) {  ?>
       <form action="/student067/dwes/pages/db/db_customer_log_in.php" method="POST" name="log_in_form" id="log_in_form">
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Username</label>
-          <input type="text" id="username"  name="username" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your username here">
+          <input type="text" id="username"  name="username" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your username here" value="<?php echo $user_logged_cokie[0]; ?>">
         </div>
         <div class="mb-4">
           <label for="name" class="block text-gray-700 font-bold mb-2">Password</label>
-          <input type="password"  name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your password here" >
+          <input type="password"  name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500" placeholder="Put your password here" value="<?php echo $user_logged_cokie[1];?>">
           <p class="text-blue-500">Forgot password?</p>
         </div>
         <div class="text-center">
