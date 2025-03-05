@@ -88,7 +88,7 @@
                             <?php }; ?>  
                         </div> 
                         <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0){?>
-                                <div class="flex flex-col mt-2 items-center">
+                                <div class="flex flex-col mt-2 items-center div-review">
                             
                                     <button class=" bg-[#FBBF24] px-4 py-2 rounded-lg hover:bg-[#F59E0B] transition-colors duration-200 mt-2 p-2">Add Review</button>
                                     <form class="form-estrellas">
@@ -109,10 +109,14 @@
                                             <label for="radio1_<?php echo $reservation['reservation_id']; ?>">★</label>
                                         </p>
                                     </form>
+                                    <form action="" method="post" name="form-review" class="form-review">
+                                    <input type="number" name="review_reservation_id" value ="<?php echo $reservation['reservation_id']; ?>">
+                                        <textarea class="w-full p-4 rounded-md border" name="reservation_review" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
+                                        <input type="text" class="review_score" name="review_score" value="0"  hidden>
 
-                                    <textarea class="w-full p-4 rounded-md border" name="reservation_review" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
+                                        <button name="submit_review" class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
 
-                                    <button class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
+                                    </form>
 
                             
                         </div>
@@ -182,5 +186,40 @@
    function autoResize(textarea) {
     textarea.style.height = 'auto'; // Restablece la altura para evitar acumulación
     textarea.style.height = textarea.scrollHeight + 'px'; // Ajusta la altura según el contenido
+
+   }
+
+   function getScore() {
+    const divsReview = document.querySelectorAll(".div-review");
+
+    divsReview.forEach(divReview => {
+       
+
+        const formScore = divReview.querySelector(".form-estrellas");
+        const formReview = divReview.querySelector(".form-review");
+
+        if (!formScore || !formReview) {  
+            return; 
+        }
+
+        formScore.addEventListener("change", function (event) {
+            if (event.target.type === "radio") {
+                const estrellasSeleccionadas = event.target.value;
+                const reviewScore = formReview.querySelector(".review_score");
+
+                if (reviewScore) {
+                    reviewScore.value = estrellasSeleccionadas + "";
+                    console.log("Selected Value:", reviewScore.value);
+                } else {
+                    console.log("This form don't have score");
+                }
+            }
+        });
+    });
 }
+    document.addEventListener("DOMContentLoaded", function () {
+        getScore();
+   
+    });
+
 </script>
