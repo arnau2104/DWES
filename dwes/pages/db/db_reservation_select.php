@@ -70,7 +70,7 @@
             
                 <div class="flex justify-center flex-wrap gap-4 ">
                 <?php foreach($reservations as $reservation){ ?>
-                    <div class="flexmy-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96 search-content">
+                    <div class=" my-8 max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 w-96 search-content">
                             <?php printReservation($reservation) ?>
                         <div class="flex gap-2">
                             <?php if(strcasecmp($reservation['reservation_state'],'check-out') == 0) { ?>
@@ -109,9 +109,9 @@
                                             <label for="radio1_<?php echo $reservation['reservation_id']; ?>">★</label>
                                         </p>
                                     </form>
-                                    <form action="" method="post" name="form-review" class="form-review">
-                                    <input type="number" name="review_reservation_id" value ="<?php echo $reservation['reservation_id']; ?>">
-                                        <textarea class="w-full p-4 rounded-md border" name="reservation_review" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
+                                    <form action="/student067/dwes/pages/querys/query_review_insert.php" method="post" name="form-review" class="form-review">
+                                    <input type="number" name="review_reservation_id" value ="<?php echo $reservation['reservation_id']; ?>" hidden>
+                                        <textarea class="w-full p-4 rounded-md border" name="review_text" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
                                         <input type="text" class="review_score" name="review_score" value="0"  hidden>
 
                                         <button name="submit_review" class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
