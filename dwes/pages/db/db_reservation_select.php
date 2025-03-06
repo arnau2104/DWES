@@ -91,32 +91,34 @@
                                 <div class="flex flex-col mt-2 items-center div-review">
                             
                                     <button class=" bg-[#FBBF24] px-4 py-2 rounded-lg hover:bg-[#F59E0B] transition-colors duration-200 mt-2 p-2">Add Review</button>
-                                    <form class="form-estrellas">
-                                        <p class="clasificacion">
-                                            <input id="radio5_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="5">
-                                            <label for="radio5_<?php echo $reservation['reservation_id']; ?>">★</label>
+                                    <div class="showHidde-add-review">
+                                        <form class="form-estrellas">
+                                            <p class="clasificacion">
+                                                <input id="radio5_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="5">
+                                                <label for="radio5_<?php echo $reservation['reservation_id']; ?>">★</label>
 
-                                            <input id="radio4_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="4">
-                                            <label for="radio4_<?php echo $reservation['reservation_id']; ?>">★</label>
+                                                <input id="radio4_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="4">
+                                                <label for="radio4_<?php echo $reservation['reservation_id']; ?>">★</label>
 
-                                            <input id="radio3_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="3">
-                                            <label for="radio3_<?php echo $reservation['reservation_id']; ?>">★</label>
+                                                <input id="radio3_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="3">
+                                                <label for="radio3_<?php echo $reservation['reservation_id']; ?>">★</label>
 
-                                            <input id="radio2_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="2">
-                                            <label for="radio2_<?php echo $reservation['reservation_id']; ?>">★</label>
+                                                <input id="radio2_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="2">
+                                                <label for="radio2_<?php echo $reservation['reservation_id']; ?>">★</label>
 
-                                            <input id="radio1_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="1">
-                                            <label for="radio1_<?php echo $reservation['reservation_id']; ?>">★</label>
-                                        </p>
-                                    </form>
-                                    <form action="/student067/dwes/pages/querys/query_review_insert.php" method="post" name="form-review" class="form-review">
-                                    <input type="number" name="review_reservation_id" value ="<?php echo $reservation['reservation_id']; ?>" hidden>
-                                        <textarea class="w-full p-4 rounded-md border" name="review_text" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
-                                        <input type="text" class="review_score" name="review_score" value="0"  hidden>
+                                                <input id="radio1_<?php echo $reservation['reservation_id']; ?>" type="radio" name="estrellas_<?php echo $reservation['reservation_id']; ?>" value="1">
+                                                <label for="radio1_<?php echo $reservation['reservation_id']; ?>">★</label>
+                                            </p>
+                                        </form>
+                                        <form action="/student067/dwes/pages/querys/query_review_insert.php" method="post" name="form-review" class="form-review">
+                                        <input type="number" name="review_reservation_id" value ="<?php echo $reservation['reservation_id']; ?>" hidden>
+                                            <textarea class="w-full p-4 rounded-md border" name="review_text" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
+                                            <input type="text" class="review_score" name="review_score" value="1"  hidden>
 
-                                        <button name="submit_review" class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
+                                            <button name="submit_review" class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
 
-                                    </form>
+                                        </form>
+                                    </div>
 
                             
                         </div>
@@ -221,5 +223,12 @@
         getScore();
    
     });
+
+    document.querySelectorAll(".showHidde-add-review").forEach((element) => {
+    element.addEventListener("click", function () {
+        this.classList.toggle("showHidde-add-review"); 
+        console.log("Clase showHidde-add-review toggled");
+    });
+});
 
 </script>

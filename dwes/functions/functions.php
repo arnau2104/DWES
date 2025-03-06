@@ -145,28 +145,5 @@ function printWeather($wheather, $onlyShowToday,$showAlldays) {
  
 ?>
 
-<script>
-   function getCookieJS(name) {
-    // Obtener todas las cookies como una cadena
-    let cookies = document.cookie;
-    
-    // Buscar la cookie específica en la cadena
-    let cookieArray = cookies.split(';');
-    
-    // Iterar sobre las cookies
-    for (let i = 0; i < cookieArray.length; i++) {
-        let cookie = cookieArray[i].trim();
-        
-        // Si encontramos la cookie que estamos buscando
-        if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1); // Devolver el valor de la cookie
-        }
-    }
-    
-    // Si no encontramos la cookie
-    return null;
-}
-
-</script>
 
  
