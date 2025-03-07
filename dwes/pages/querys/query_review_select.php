@@ -2,7 +2,7 @@
         include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/db_connection/db_connection.php');
 
        
-        $sql = "SELECT * FROM 067_reviews_view WHERE status = 1;";
+        $sql = "SELECT * FROM 067_reviews_view WHERE review_status = 1;";
 
         $result = mysqli_query($conn,$sql);
         $reviews = mysqli_fetch_all($result,MYSQLI_ASSOC);

@@ -14,7 +14,7 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" href="/student067/dwes/css/weather-icons-master/css/weather-icons.css">
      
-   
+     
 
 </head>
 <body class="box-border w-full h-screen">
@@ -28,7 +28,7 @@ session_start();
     <!-- Navegación -->
     <nav>
       <ul class="flex space-x-4">
-        <li><a href="/student067/dwes/index.php" class="text-white hover:text-gray-300">Inicio</a></li>
+        <li><a href="/student067/dwes/index.php" class="text-white hover:text-gray-300">Home</a></li>
         <?php if(isset($_SESSION['rols'])) { ?>
         <li class="relative group">
           <p class="text-white hover:text-gray-300">Customers</p>
@@ -73,19 +73,22 @@ session_start();
         <?php } ?>
       </ul>
     </nav>
+      <!-- Botón -->
+      <?php if(empty($_SESSION['username']) == true){ ?>
+      <a href="/student067/dwes/pages/forms/form_customer_log_in.php" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200">Iniciar Sesión</a>
+      <?php } else { ?>
+        <div class="flex flex-col items-center p-4 rounded-lg hover:bg-blue-700">
+          <!-- <p class="text-white">Hola <?php //echo $_SESSION['username'];?></p> -->
+          <img src="<?php echo $_SESSION['user_image_path'] ? $_SESSION['user_image_path'] : '/student067/dwes/images/users/user_profile_image_default.jpg' ; ?>" class="w-[50px] h-[50px] rounded-[50%] cursor-pointer mb-2" id="profile_photo">
+          <p class="text-white hover:text-gray-300 hidden username"><?php echo $_SESSION['username']?></p>
+          <a href="/student067/dwes/pages/db/db_customer_log_out.php"><button class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200 hidden log_out" >Log Out</button></a>
+        </div>
+      <?php } ?>
 
-    <!-- Botón -->
-    <?php if(empty($_SESSION['username']) == true){ ?>
-    <a href="/student067/dwes/pages/forms/form_customer_log_in.php" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200">Iniciar Sesión</a>
-    <?php } else { ?>
-      <div class="flex flex-col items-center p-4 rounded-lg hover:bg-blue-700">
-        <!-- <p class="text-white">Hola <?php //echo $_SESSION['username'];?></p> -->
-         <img src="<?php echo $_SESSION['user_image_path']; ?>" class="w-[50px] h-[50px] rounded-[50%] cursor-pointer mb-2" id="profile_photo">
-         <p class="text-white hover:text-gray-300 hidden username"><?php echo $_SESSION['username']?></p>
-        <a href="/student067/dwes/pages/db/db_customer_log_out.php"><button class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-200 hidden log_out" >Log Out</button></a>
-      </div>
-    <?php } ?>
+      </div>  
+    </div>
   </div>
+
 </header>
 
 

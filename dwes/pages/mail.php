@@ -123,7 +123,7 @@ if (!empty($reservation) && is_array($reservation)) {
 
         //Recipients
         $mail->setFrom('no-reply@remotehost.es', "Arnau's Hotel");
-        $mail->addAddress('amarques20733@iesjoanramis.org');     //Add a recipient
+        $mail->addAddress($reservation[0]['email']);     //Add a recipient
     
         
 

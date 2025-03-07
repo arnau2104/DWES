@@ -91,6 +91,7 @@ class BadWordsFilter {
       $bad_word_regex = $this->build_word_regex($bad_word, true);
 
       if(preg_match($bad_word_regex, $string)) {
+        echo $bad_word_regex;
         return true;
       }
     }
@@ -133,24 +134,28 @@ class BadWordsFilter {
 
     if(!$this->allow_urls) {
       if($this->check_has_urls($string)) {
+        echo "Contiene una URL\n";
         return false;
       }
     }
 
     if(!$this->allow_html) {
       if($this->check_has_html($string)) {
+        echo "Contiene HTML\n";
         return false;
       }
     }
 
     if(!$this->allow_bad_words_nouns) {
       if($this->check_has_bad_words_nouns($string)) {
+        echo "Contiene un sustantivo prohibido\n";
         return false;
       }
     }
 
     if(!$this->allow_bad_words_verbs) {
       if($this->check_has_bad_words_verbs($string)) {
+        echo "Contiene un verbo prohibido\n";
         return false;
       }
     }

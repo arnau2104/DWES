@@ -60,9 +60,12 @@
         
          //if the reservation_state is updated, show this message
          if(isset($_POST['submit_update_reservation_state'])) {
-            include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_update_reservation_state.php');
-            header('Location: /student067/dwes/pages/forms/form_reservation_select.php'); //temporal, change later to db_reservation_select
-            exit();
+            include($_SERVER['DOCUMENT_ROOT'].'/student067/dwes/pages/querys/query_reservation_update_reservation_state.php'); ?>
+            
+            <script>
+                window.location.href = "/student067/dwes/pages/forms/form_reservation_select.php";
+            </script>
+           <?php exit();
         }else {
             if(empty($reservations)== true) {
                 echo '<h1> Any reservation was founded</h1>';

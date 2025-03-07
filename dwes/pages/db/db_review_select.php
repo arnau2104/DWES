@@ -12,15 +12,21 @@
                 $stars = str_repeat('★', $review['review_score']);
                 ?>
                 <div class="bg-white p-6 shadow-xl rounded-lg border border-gray-200">
-                    <p class="font-semibold text-lg"><?php echo $review['forename'] . ' ' . $review['lastname']; ?></p>
+                    <div class="flex gap-3 items-top mb-2 items-center">
+                        <!-- check if the user have profile image, else put the default image -->
+                        <?php  if($review['user_image_path']) { ?>
+                            <img class="w-[40px] h-[40px] rounded-[50%]" src="<?php echo $review['user_image_path'] ?>" alt="">
+                        <?php }else { ?>
+                            <img class="w-[50px] h-[50px] rounded-[50%]" src="<?php echo '/student067/dwes/images/users/user_profile_image_default.jpg'; ?>" alt="">
+                         <?php } ?>  
+                        <p class="font-semibold text-lg"><?php echo $review['forename'] . ' ' . $review['lastname']; ?></p>
+                    </div>
                     <p class="text-yellow-400 text-xl"><?php echo $stars; ?></p>
                     <p class="text-gray-700 line-clamp-4" id="review-text-<?php echo $review['review_id']; ?>">
                         <?php echo $review['review_text']; ?>
                     </p>
                     <?php if(mb_strlen($review['review_text'], 'UTF-8') >= 156) {?>
-                    <button class="text-blue-500 hover:underline mt-2" onclick="toggleReadMore(<?php echo $review['review_id']; ?>)">
-                       Read more
-                    </button>
+                    <button class="text-blue-500 hover:underline mt-2 read-more" onclick="toggleReadMore(<?php echo $review['review_id']; ?>)">Read more</button>
                     <?php } ?>
                 </div>
             <?php }
@@ -46,4 +52,16 @@ function toggleReadMore(id) {
         reviewText.classList.remove("h-auto"); 
     }
 }
+
+document.querySelectorAll(".read-more").forEach((readMore)=> {
+    readMore.addEventListener("click", function(){
+        // console.log(this.textContent);
+        if(this.textContent == "Read more") {
+            this.innerText = "Read less";
+        }else {
+            this.innerText = "Read more"
+        }
+    })
+})
+
 </script>
