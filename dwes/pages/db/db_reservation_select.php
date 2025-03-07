@@ -112,7 +112,7 @@
                                         </form>
                                         <form action="/student067/dwes/pages/querys/query_review_insert.php" method="post" name="form-review" class="form-review">
                                         <input type="number" name="review_reservation_id" value ="<?php echo $reservation['reservation_id']; ?>" hidden>
-                                            <textarea class="w-full p-4 rounded-md border" name="review_text" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)"></textarea>
+                                            <textarea class="w-full p-4 rounded-md border" name="review_text" id="reservation_review" placeholder="Write a review about your stay at the hotel" oninput="autoResize(this)" maxlength="300"></textarea>
                                             <input type="text" class="review_score" name="review_score" value="1"  hidden>
 
                                             <button name="submit_review" class=" bg-[#22C55E] px-4 py-2 w-32 rounded-lg hover:bg-[#16A34A] transition-colors duration-200 mt-2 p-2">Publish</button>
